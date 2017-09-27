@@ -3,8 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>Devfest 17</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .coordinates{
+            color: white;
+        }
+        .coordinates span{
+            color: inherit;
+        }
+        #x-coord,#y-coord{
+            width:30px;
+        }
+        .logo-wrap {
+            margin: 0 auto;
+            max-width: 1280px;
+            width: 90%; }
+
+        @media only screen and (min-width: 601px) {
+            .logo-wrap {
+                width: 85%; } }
+
+        @media only screen and (min-width: 993px) {
+            .logo-wrap {
+                width: 70%; } }
+    </style>
+    <link rel="stylesheet" href="scss/effect.css">
 </head>
-<body>
-    
+<body style="background: url(img/bg.png) repeat;">
+    <div class="landing-wrapper" style="height: 100vh;position: relative;">
+
+        <div class="logo-wrap">
+            <div class="logo-wrap" style="position: relative;height: 100vh;">
+                <div class="example-three">
+                    <img src="img/Devfest1.png" style="width: 100%;height: auto;">
+                    <img src="img/Devfest1.png" style="width: 100%;height: auto;">
+                    <img src="img/Devfest1.png" style="width: 100%;height: auto;">
+                </div>
+            </div>
+        </div>
+        <!--<h1 class="example-one" data-text="DEVFEST" style="color: white;font-size: 80pt;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);will-change: transform;">DEVFEST</h1>-->
+        <div id style="position: absolute;right:0;top: 0;padding: 10px;">
+            <div class="bars"></div>
+            <div class="coordinates">X <span id="x-coord" style="margin-right: 5px;">0</span> Y <span id="y-coord">0</span></div>
+        </div>
+    </div>
+    <script>
+        var wrap=document.getElementsByClassName('landing-wrapper')[0];
+        var x=document.getElementById('x-coord');
+        var y=document.getElementById('y-coord');
+        wrap.onmousemove=function (e) {
+            console.log(e);
+            x.innerHTML=e.clientX;
+            y.innerHTML=e.clientY;
+        }
+    </script>
+    <script>
+        var xhttp=new XMLHttpRequest();
+        xhttp.open("GET", "ajax_info.txt", true);
+
+    </script>
 </body>
 </html>

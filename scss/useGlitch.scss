@@ -1,0 +1,65 @@
+@import "glitch";
+
+/*
+  MIXIN(S)
+  =================
+ /chriscoyier/pen/FwJux
+
+
+  (TEXT) PARAMS
+  =================
+  1. Namespace
+  2. Intensity
+  3. Text color
+  4. Background color (flat)
+  5. Highlight #1 color
+  6. Highlight #2 color
+  7. Width (px)
+  8. Height (px)
+*/
+
+// Usage
+.example-one {
+  font-size: 100px;
+  @include textGlitch("example-one", 20, white, black, red, blue, 492, 123);
+}
+.example-two {
+  font-size: 52px;
+  @include textGlitch("example-two", 10, red, black, white, green, 714, 50);
+}
+
+
+/*
+  (IMAGE) PARAMS
+  =================
+  @mixin imgGlitch($name, $intensity, $width, $height, $top, $left)
+  =================
+  1. Namespace
+  2. Intensity
+  3. Width (px)
+  4. Height (px)
+  5. Top (px, abs pos)
+  6. Left (px, abs pos)
+*/
+
+.example-three {
+  @include imgGlitch("example-three", 30, 753, 102,0,0);
+}
+
+/*
+  (SVG) PARAMS
+  =================
+  @mixin svgGlitch($name, $intensity, $fillColor, $background, $width, $height, $top, $left)
+  =================
+  1. Namespace
+  2. Intensity
+  3. Fill Color
+  4. Background
+  5. Width (px)
+  6. Height (px)
+  5. Top (px, abs pos)
+  6. Left (px, abs pos)
+*/
+.example-four {
+  @include svgGlitch("example-four", 30, white, black, red, red, 100, 100, 200, 175);
+}
