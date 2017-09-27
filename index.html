@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Devfest 17</title>
+    <title>Devfest 17 portal</title>
     <style>
         *{
             margin: 0;
             padding: 0;
         }
-        .coordinates{
+        .coordinates,.trackWrap{
             color: white;
+            display: block;
+            float: right;
         }
         .coordinates span{
             color: inherit;
@@ -29,12 +31,34 @@
         @media only screen and (min-width: 993px) {
             .logo-wrap {
                 width: 70%; } }
+        .bars{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .bar{
+            width: 3px;
+            height: 15px;
+            background-color: #8a8a8a;
+            margin:0 2px;
+        }
+        .trackBar{
+            flex-grow: 1;
+            background-color: #4e88ff;
+        }
+        .track{
+            align-items: stretch;
+            display: flex;
+            height: 15px;
+            width: 3px;
+            transition: width 0.5s;
+            transition-timing-function: ease-out;
+        }
     </style>
     <link rel="stylesheet" href="scss/effect.css">
 </head>
 <body style="background: url(img/bg.png) repeat;">
-    <div class="landing-wrapper" style="height: 100vh;position: relative;">
-
+    <div class="landing-wrapper" style="height: 100vh;position: relative;overflow: hidden;">
+        <img src="img/gdglogo.png" style="width: 350px;height: auto; position: absolute;" alt="">
         <div class="logo-wrap">
             <div class="logo-wrap" style="position: relative;height: 100vh;">
                 <div class="example-three">
@@ -42,28 +66,79 @@
                     <img src="img/Devfest1.png" style="width: 100%;height: auto;">
                     <img src="img/Devfest1.png" style="width: 100%;height: auto;">
                 </div>
+                <div class="glitch-dots">
+                    <img style="position: absolute;top: 50%;transform: translate(-50%,-50%);" src="img/Dots.png" alt="">
+                    <img style="position: absolute;top: 50%;transform: translate(-50%,-50%);" src="img/Dots.png" alt="">
+                    <img style="position: absolute;top: 50%;transform: translate(-50%,-50%);" src="img/Dots.png" alt="">
+                </div>
             </div>
         </div>
-        <!--<h1 class="example-one" data-text="DEVFEST" style="color: white;font-size: 80pt;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);will-change: transform;">DEVFEST</h1>-->
-        <div id style="position: absolute;right:0;top: 0;padding: 10px;">
-            <div class="bars"></div>
-            <div class="coordinates">X <span id="x-coord" style="margin-right: 5px;">0</span> Y <span id="y-coord">0</span></div>
+        <div class="glitch-dots">
+            <img style="position: absolute;left: 80%;top: 100%;transform: translate(-50%,-50%)" src="img/Dots.png" alt="">
+            <img style="position: absolute;left: 80%;top: 100%;transform: translate(-50%,-50%)" src="img/Dots.png" alt="">
+            <img style="position: absolute;left: 80%;top: 100%;transform: translate(-50%,-50%)" src="img/Dots.png" alt="">
+        </div>
+        <div id style="position: absolute;right:0;top: 0;padding: 20px;">
+            <div style="position: relative;">
+                <div class="bars"><span class="bar"></span></div>
+                <div class="coordinates">X - <span id="x-coord" style="margin-right: 5px;">0</span> Y - <span id="y-coord">0</span></div>
+            </div>
+        </div>
+        <div class="trackWrap" style="position: absolute;left:0;bottom: 0;padding: 20px;">
+            <p>SYSTEM OK</p>
+            <p>INITIALIZING DOM</p>
+            <p>TRACKING USER</p>
+            <p id="trackX" class="track"><span class="trackBar"></span></p>
+            <p id="trackY" class="track" style="margin-top: 5px;"><span class="trackBar"></span></p>
         </div>
     </div>
     <script>
         var wrap=document.getElementsByClassName('landing-wrapper')[0];
         var x=document.getElementById('x-coord');
         var y=document.getElementById('y-coord');
-        wrap.onmousemove=function (e) {
-            console.log(e);
-            x.innerHTML=e.clientX;
-            y.innerHTML=e.clientY;
+        var tX=document.getElementById('trackX');
+        var tY=document.getElementById('trackY');
+        var bars=document.getElementsByClassName('bars')[0];
+        var a,b;
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function() {
+                var context = this, args = arguments;
+                var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
         }
+        var dispBars=debounce(function () {
+            var bar='<span class="bar"></span>';
+            var n=Math.ceil(Math.abs((a/window.innerWidth)+(b/window.innerHeight))*15);
+            console.log(n);
+            bars.innerHTML='';
+            for(var i=0;i<n;i++){
+                bars.innerHTML+=bar;
+            }
+            tX.style.width=(a/window.innerWidth)*300+'px';
+            tY.style.width=(b/window.innerHeight)*300+'px';
+        },15,true);
+        function updateUI(e) {
+            console.log(e);
+            a=Math.floor(e.clientX||e.touches[0].clientX);
+            x.innerHTML=a;
+            b=Math.floor(e.clientY||e.touches[0].clientY);
+            y.innerHTML=b;
+            window.requestAnimationFrame(dispBars);
+        }
+        wrap.onmousemove=updateUI;
+        wrap.addEventListener("touchmove", updateUI, false);
     </script>
     <script>
         var xhttp=new XMLHttpRequest();
         xhttp.open("GET", "ajax_info.txt", true);
-
     </script>
 </body>
 </html>

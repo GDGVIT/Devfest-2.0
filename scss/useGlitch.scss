@@ -45,6 +45,9 @@
 .example-three {
   @include imgGlitch("example-three", 30, 753, 102,0,0);
 }
+.glitch-dots {
+  @include imgGlitch("glitch-dots", 20, 209, 252,0,0);
+}
 
 /*
   (SVG) PARAMS
