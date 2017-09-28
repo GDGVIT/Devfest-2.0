@@ -1,0 +1,10 @@
+{"name": "Devfest 2017",
+  "short_name": "Devfest",
+  "start_url": ".",
+  "display": "fullscreen",
+  "description": "DevFest 2017 portal",
+  "related_applications": [{
+    "platform": "web",
+    "url":"https://www.meetup.com/GDG-VIT/events/242833405/"
+  }]
+}
