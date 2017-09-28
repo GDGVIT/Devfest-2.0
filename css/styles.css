@@ -1,0 +1,149 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+}
+
+.img-div{
+    padding-right: 100px;
+    padding-left: 100px;
+}
+#devfest-logo{
+    max-width:100%;
+    height: auto;
+}
+.date-section{
+    background-color: white;
+    padding: 10px 15px;
+    margin-top: 25px;
+
+}
+.maincard{
+    padding: 35px;
+    transform: translateY(50px);
+}
+.maincard p{
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+.s5ths,
+.m5ths,
+.l5ths,
+.xl5ths {
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
+.row .col.s5ths {
+    width: 20%;
+}
+
+@media only screen and (min-width: 601px) {
+    .row .col.m5ths {
+        width: 20%;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .row .col.l5ths {
+        width: 20%;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    .row .col.xl5ths {
+        width: 20%;
+    }
+}
+/*88888*/
+div.small-img {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+}
+
+.caption {
+    display: block;
+    padding-top: 5px;
+}
+.small-img img{
+    width: auto;
+    height: 65px;
+}
+.ideathon-text span{
+    display: block;
+
+}
+.ideathon-div{
+    background-color: white;
+    /*margin: 30px 0 0 0;*/
+    padding : 80px 0 50px 0;
+}
+.ideathon-div .ideathon-text{
+    text-align: center;
+    word-spacing: 9px;
+    letter-spacing: 1.2px;
+}
+#ideathon{
+    font-weight: bolder;
+}
+.timeline-wrapper{
+    background-color: black;
+    padding-bottom: 30px;
+}
+.timeline-wrapper #timeline-heading{
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+    letter-spacing: 1.2px;
+}
+.speakersandsponsors #speakertext{
+    color: black;
+    text-align: center;
+    padding-top: 40px;
+}
+footer{
+    background-color: black;
+    padding: 12px 0px 3px;
+}
+#cup24{
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 75%, 50% 100%, 0 100%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 0, 100% 75%, 50% 100%, 0 100%, 0% 25%);
+
+}
+@media screen and (max-width: 600px )
+{
+    #personlogo{
+
+    }
+}
+#hexagonimage{
+    width: 50px;
+    border-right: 1px solid black;
+}
+.z-depth-1,.card-panel, .card{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.card-content {
+    border-radius: 0 !important;
+    margin-top: 15px;
+    width: 106%;
+}
+.card-stacked{
+    background-color: white !important;
+    border-right: 1px solid black;
+}
+.events li a{
+    top:100% !important;
+}
+.cd-horizontal-timeline .events a::after{
+    top:-5px !important;
+}
+.time-in-timeline{
+    margin-top: 10px;
+}

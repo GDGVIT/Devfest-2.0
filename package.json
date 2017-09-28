@@ -1,0 +1,14 @@
+{
+  "name": "devfest-landing-2017",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/GDGVIT/devfest-landing-2017.git",
+  "author": "Vineeth S <svineth.face@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "babel-preset-env": "^1.6.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0"
+  }
+}
