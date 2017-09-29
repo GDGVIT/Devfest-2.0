@@ -3,7 +3,12 @@ const browserify=require('browserify');
 const babelify=require('babelify');
 const concat=require('gulp-concat');
 const source=require('vinyl-source-stream');
+const streamify = require('gulp-streamify');
+const uglify = require('gulp-uglify');
 const connect=require('gulp-connect');
+const imagemin = require('gulp-imagemin');
+const cleanCSS = require('gulp-clean-css');
+const htmlmin = require('gulp-htmlmin');
 const cssAssets = [
     `${__dirname}/src/css/materialize.css`,
     `${__dirname}/src/css/timelinecss.css`,
@@ -22,19 +27,23 @@ gulp.task('js',function () {
         .transform(babelify)
         .bundle()
         .pipe(source('bundle.js'))
+        .pipe(streamify(uglify()))
         .pipe(gulp.dest(`${__dirname}/dist/js`))
         .pipe(connect.reload());
 });
 gulp.task('css',function () {
    gulp.src(cssAssets)
        .pipe(concat('bundle.css'))
+       .pipe(cleanCSS())
        .pipe(gulp.dest(`${__dirname}/dist/css`));
    gulp.src(`${__dirname}/src/scss/effect.css`)
+       .pipe(cleanCSS())
        .pipe(gulp.dest(`${__dirname}/dist/css`))
        .pipe(connect.reload());
 });
 gulp.task('images',function () {
     gulp.src(`${__dirname}/src/img/*`)
+        .pipe(imagemin([imagemin.optipng({optimizationLevel: 7})]))
         .pipe(gulp.dest(`${__dirname}/dist/img`))
         .pipe(connect.reload());
 });
@@ -45,6 +54,13 @@ gulp.task('manifest',function () {
 });
 gulp.task('html',function () {
     gulp.src(`${__dirname}/src/index.html`)
+        .pipe(htmlmin({
+                collapseWhitespace:true,
+                minifyCSS:true,
+                minifyJS:true,
+                removeComments:true
+            })
+        )
         .pipe(gulp.dest(`${__dirname}/dist`))
         .pipe(connect.reload());
 });
