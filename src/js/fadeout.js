@@ -8,11 +8,18 @@ export default function fadeParallax(){
   $(function(){
     $(window).scroll(function() {
       if ($(document).scrollTop() > 150) {
+        if(right.hasClass('fadeInRight') || left.hasClass('fadeInLeft')){
+          right.removeClass('fadeInRight');
+          left.removeClass('fadeInLeft');
+        };
         right.addClass('animated fadeOutRight');
         left.addClass('animated fadeOutLeft');
+
       } else {
-        right.removeClass('fadeOutRight');
-        left.removeClass('fadeOutLeft');
+        if(right.hasClass('fadeOutRight') || left.hasClass('fadeOutLeft')){
+          right.removeClass('fadeOutRight');
+          left.removeClass('fadeOutLeft');
+        }
         right.addClass('fadeInRight');
         left.addClass('fadeInLeft');
       }
