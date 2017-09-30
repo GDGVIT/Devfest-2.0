@@ -20,7 +20,7 @@ body{
 
 }
 .maincard{
-    padding: 35px;
+    padding: 50px !important;
     transform: translateY(50px);
 }
 .maincard p{
@@ -146,4 +146,7 @@ footer{
 }
 .time-in-timeline{
     margin-top: 10px;
+}
+#timeline-heading,#speakertext{
+  margin: 0 !important;
 }
