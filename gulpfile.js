@@ -12,6 +12,7 @@ const htmlmin = require('gulp-htmlmin');
 const cssAssets = [
     `${__dirname}/src/css/materialize.css`,
     `${__dirname}/src/css/timelinecss.css`,
+    `${__dirname}/src/css/animate.css`,
     `${__dirname}/src/css/styles.css`
 ];
 gulp.task('server',function () {

@@ -4,6 +4,9 @@
 import $ from 'jquery';
 import 'hammerjs';
 import 'materialize-css/dist/js/materialize';
+import fadeParallax from './fadeout';
+
+
 $(function () {
     var timelines = $('.cd-horizontal-timeline'),
         eventsMinDistance = 60;
@@ -386,4 +389,5 @@ $(function () {
 function loadUI() {
     $('.content-wrapper').css('display','block');
     console.log('stylesheet loaded !');
+    fadeParallax();
 }
