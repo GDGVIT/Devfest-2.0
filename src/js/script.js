@@ -4,9 +4,14 @@
 import $ from 'jquery';
 import 'hammerjs';
 import 'materialize-css/dist/js/materialize';
+<<<<<<< HEAD
 import fadeParallax from './fadeout';
 
 
+=======
+import removeGlitch from './removeGlitch';
+import cardParallax from './cardParallax';
+>>>>>>> 8bf7d64070a1db3cdbcebe07e74e8a8203af4fa0
 $(function () {
     var timelines = $('.cd-horizontal-timeline'),
         eventsMinDistance = 60;
@@ -388,6 +393,8 @@ $(function () {
 });
 function loadUI() {
     $('.content-wrapper').css('display','block');
+    removeGlitch();
+    cardParallax();
     console.log('stylesheet loaded !');
     fadeParallax();
 }
