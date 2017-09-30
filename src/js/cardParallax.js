@@ -7,9 +7,10 @@ export default  function () {
     $top.css('visibility','visible');
     $('.landing-wrapper').after($top);
     let $bottom=$('#devfest-fixed');
-    let top=$top.offset().top,bottom=$bottom.offset().top,flag=false;
-    function handleScroll(e) {
-        let scroll=e.srcElement.scrollingElement.scrollTop;
+    let top=$top.offset().top,bottom=$bottom.offset().top,flag=(scroll+top>=bottom);
+    let $doc=$(document);
+    function handleScroll() {
+        let scroll=$doc.scrollTop();
         console.log(scroll,top,bottom);
         if(flag){
             if(scroll+top<bottom){

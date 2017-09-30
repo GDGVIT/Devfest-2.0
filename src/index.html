@@ -52,9 +52,6 @@
         .gdgLogo{
             width: 250px;
         }
-        .classifiedWrap{
-            opacity: 0.2;
-        }
         .logoParallax {
             margin: 0 auto;
             max-width: 1280px;
@@ -150,7 +147,7 @@
         }
         .loadWrap{
             color: white;
-            position: absolute;
+            position: fixed;
             left: 50%;
             bottom: 30px;
             transform: translateX(-50%);
@@ -161,7 +158,7 @@
 </head>
 <body>
 <div class="landing-wrapper" style="height: 100vh;position: relative;overflow: hidden;">
-    <img class="gdgLogo" src="img/gdglogo.png" style="height: auto; position: fixed;" alt="">
+    <img id="gdgTopLogo" class="gdgLogo" src="img/gdglogo.png" style="height: auto; position: fixed;" alt="">
     <div class="logo-wrap">
         <div class="logo-wrap" style="position: relative;height: 100vh;">
             <div class="example-three">
@@ -170,12 +167,11 @@
                 <img src="img/Devfest1.png" style="width: 100%;height: auto;">
             </div>
 
-            <div id="landBtn"
-                 style="position:fixed;display: flex;justify-content: space-around;flex-wrap: wrap;">
-                <a class="button-hex black" href="#">
+            <div id="landBtn" style="position:fixed;left:50%;transform:translateX(-50%);display: flex;justify-content: space-around;flex-wrap: wrap;">
+                <a id="watch-button" class="button-hex black" href="#">
                     <span>Watch Promo Video</span>
                 </a>
-                <a class="button-hex black" href="#">
+                <a id="register-button" class="button-hex black" href="#">
                     <span>Register</span>
                 </a>
             </div>
@@ -184,15 +180,17 @@
                     <span style="width: 100%;text-align: center;display: block;">CLASSIFIED</span>
                 </div>
             </div>-->
-            <div class="classifiedWrap" style="position:fixed;top: 50%;right:0;pointer-events: none;">
-                <p><span style="width: 25px;">4 </span><span class="bytes">BYTES</span>File2</p>
-                <p><span style="width: 25px;">32</span><span class="bytes">BYTES</span>SYS.INI</p>
-                <p><span style="width: 25px;">8 </span><span class="bytes">BYTES</span></p>
-                <p><span style="width: 25px;">8 </span><span class="bytes">BYTES</span>AUTORUN</p>
-                <p><span style="width: 25px;">64</span><span class="bytes">BYTES</span>ERROR</p>
-                <p><span style="width: 25px;">0 </span><span class="bytes">BYTES</span>SYSTEMDUMP</p>
+            <div class="classifiedWrap" style="position:fixed;top: 50%;right:20%;pointer-events: none;">
+                <div style="opacity: 0.3;">
+                    <p><span style="width: 25px;">4 </span><span class="bytes">BYTES</span>File2</p>
+                    <p><span style="width: 25px;">32</span><span class="bytes">BYTES</span>SYS.INI</p>
+                    <p><span style="width: 25px;">8 </span><span class="bytes">BYTES</span></p>
+                    <p><span style="width: 25px;">8 </span><span class="bytes">BYTES</span>AUTORUN</p>
+                    <p><span style="width: 25px;">64</span><span class="bytes">BYTES</span>ERROR</p>
+                    <p><span style="width: 25px;">0 </span><span class="bytes">BYTES</span>SYSTEMDUMP</p>
+                </div>
             </div>
-            <div class="glitch-dots">
+            <div class="glitch-dots" id="glitch-left">
                 <img style="position: absolute;top: 50%;transform: translate(-50%,-50%);" src="img/Dots.png" alt="">
                 <img style="position: absolute;top: 50%;transform: translate(-50%,-50%);" src="img/Dots.png" alt="">
                 <img style="position: absolute;top: 50%;transform: translate(-50%,-50%);" src="img/Dots.png" alt="">
@@ -200,11 +198,11 @@
         </div>
     </div>
     <div class="glitch-dots mobHide">
-        <img style="position: absolute;left: 80%;top: 100%;transform: translate(-50%,-50%)" src="img/Dots.png" alt="">
+        <img id="mobhideimg" style="position: absolute;left: 80%;top: 100%;transform: translate(-50%,-50%)" src="img/Dots.png" alt="">
         <img style="position: absolute;left: 80%;top: 100%;transform: translate(-50%,-50%)" src="img/Dots.png" alt="">
         <img style="position: absolute;left: 80%;top: 100%;transform: translate(-50%,-50%)" src="img/Dots.png" alt="">
     </div>
-    <div id style="position: fixed;right:0;top: 0;padding: 20px;">
+    <div id="coordTrack" style="position: fixed;right:0;top: 0;padding: 20px;">
         <div style="position: relative;">
             <div class="bars"><span class="bar"></span></div>
             <div class="coordinates">X - <span id="x-coord" style="margin-right: 5px;">0</span> Y - <span
@@ -227,50 +225,52 @@
     <div class="row">
         <div class="col s10 offset-s1 maincard" style="background-color: black;padding: 0;">
             <div class="logoParallax">
-                <div>
+                <div style="padding-top: 50px;">
                     <img id="devfest-fixed" src="img/Devfest1.png" alt="Devfest" class="responsive-img" style="visibility: hidden;">
                 </div>
             </div>
-            <div class="container" style="text-align: center;">
-                <div class="date-section container">
-                    <span>27-28<sup>th</sup> October | VIT UNIVERSITY</span>
+            <div style="padding: 50px;">
+                <div class="container" style="text-align: center;">
+                    <div class="date-section container">
+                        <span>27-28<sup>th</sup> October | VIT UNIVERSITY</span>
+                    </div>
                 </div>
-            </div>
-            <br/>
-            <p>DevFest’17 is back to bring innovators, thinkers and entrepreneurs under one roof for its third season.
-                This time around, the brain-wracking challenges, the entrepreneur’s dream-come- true pitches, and
-                the workshops come with the icing of top-notch exposure to the IT industry.</p>
-            <p>The basic premise of a Hackathon is to have technical minds peer deeply at a real world problem and
-                create a solution to solve it. This solution needs to be ideated, designed and delivered in all of 18
-                hours. Hackathon also features some revered professionals and MVPs from IT sharing their ideas
-                and thoughts on cutting edge technologies. The event shall have them impart this knowledge in one-
-                on-one sessions or workshops.</p><br/>
+                <br/>
+                <p>DevFest’17 is back to bring innovators, thinkers and entrepreneurs under one roof for its third season.
+                    This time around, the brain-wracking challenges, the entrepreneur’s dream-come- true pitches, and
+                    the workshops come with the icing of top-notch exposure to the IT industry.</p>
+                <p>The basic premise of a Hackathon is to have technical minds peer deeply at a real world problem and
+                    create a solution to solve it. This solution needs to be ideated, designed and delivered in all of 18
+                    hours. Hackathon also features some revered professionals and MVPs from IT sharing their ideas
+                    and thoughts on cutting edge technologies. The event shall have them impart this knowledge in one-
+                    on-one sessions or workshops.</p><br/>
 
-            <div class="row perks-section" style="color: white;">
-                <div class="col m5ths s12 small-img">
-                    <img src="img/championship4.png" alt="champion">
-                    <span class="caption">Prizes worth 25000</span>
+                <div class="row perks-section" style="color: white;">
+                    <div class="col m2 offset-m1 s6 small-img">
+                        <img src="img/championship4.png" alt="champion">
+                        <span class="caption">Prizes worth 25000</span>
+                    </div>
+                    <div class="col m2 s6 small-img">
+                        <img src="img/person1.png" alt="person" id="personlogo">
+                        <span class="caption">Speakers &amp; Mentors</span>
+                    </div>
+                    <div class="col m2 s6 small-img">
+                        <img src="img/dollar24.png" alt="dollar">
+                        <span class="caption">Free registration</span>
+                    </div>
+                    <div class="col m2 s6 small-img">
+                        <img src="img/cup24.png" alt="cup">
+                        <span class="caption">Unlimited coffee</span>
+                    </div>
+                    <div class="col m2 s6 offset-s3 small-img">
+                        <img src="img/plain2.png" alt="schwags">
+                        <span class="caption">Schwags &amp; foods</span>
+                    </div>
                 </div>
-                <div class="col m5ths s12 small-img">
-                    <img src="img/person1.png" alt="person" id="personlogo">
-                    <span class="caption">Speakers &amp; Mentors</span>
+                <br>
+                <div class="reg-btn center">
+                    <button class="btn" style="background-color: transparent;border: 1px solid white;">Register</button>
                 </div>
-                <div class="col m5ths s12 small-img">
-                    <img src="img/dollar24.png" alt="dollar">
-                    <span class="caption">Free registration</span>
-                </div>
-                <div class="col m5ths s12 small-img">
-                    <img src="img/cup24.png" alt="cup">
-                    <span class="caption">Unlimited coffee</span>
-                </div>
-                <div class="col m5ths s12 small-img">
-                    <img src="img/plain2.png" alt="schwags">
-                    <span class="caption">Schwags &amp; foods</span>
-                </div>
-            </div>
-            <br>
-            <div class="reg-btn center">
-                <button class="btn" style="background-color: transparent;border: 1px solid white;">Register</button>
             </div>
         </div>
     </div>
@@ -355,9 +355,9 @@
     </div>
     <footer>
         <div class="row">
-            <img src="img/gdglogo.png" style="height: 36px;width:auto;float: left;" alt="">
+            <img src="img/gdglogo.png" style="width:auto;float: left;" alt="">
             <button class="btn"
-                    style="background-color: transparent;border: 1px solid white;color: white;float: right;margin-right: 60px;">
+                    style="background-color: transparent;border: 1px solid white;color: white;float: right;margin-right: 60px;margin-top:20px;">
                 REGISTER
             </button>
         </div>

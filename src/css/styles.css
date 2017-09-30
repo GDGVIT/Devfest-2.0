@@ -4,7 +4,9 @@ body{
     overflow-x: hidden;
 
 }
-
+.landing-wrapper{
+    height: calc(100vh + 150px) !important;
+}
 .img-div{
     padding-right: 100px;
     padding-left: 100px;
@@ -20,7 +22,7 @@ body{
 
 }
 .maincard{
-    padding: 35px;
+    padding: 50px;
     transform: translateY(50px);
 }
 .maincard p{
@@ -28,19 +30,6 @@ body{
     text-align: center;
     font-size: 18px;
 }
-.s5ths,
-.m5ths,
-.l5ths,
-.xl5ths {
-    margin-left: auto;
-    left: auto;
-    right: auto;
-}
-
-.row .col.m5ths {
-    width: 20%;
-}
-
 /*88888*/
 div.small-img {
     vertical-align: top;
@@ -129,4 +118,7 @@ footer{
 }
 .time-in-timeline{
     margin-top: 10px;
+}
+#timeline-heading,#speakertext{
+  margin: 0 !important;
 }
