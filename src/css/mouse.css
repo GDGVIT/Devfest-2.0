@@ -1,4 +1,34 @@
-#mouse-button{position:absolute;left:50%;bottom:30px;text-decoration:none;opacity:0}
-#mouse-button .mouse{display:block;position:relative;width:28px;height:43px;border:2px solid #7F7F85;box-sizing:border-box;border-radius:18px;margin:0 auto 10px}
-#mouse-button .mouse .mouse-scroll{position:absolute;left:50%;top:5px;width:4px;height:11px;margin-left:-2px;border-radius:3px;background:#7F7F85}
-#mouse-button:hover .mouse .mouse-scroll{top:20px}
+#mouse-button {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#mouse-button .mouse {
+    display: block;
+    position: relative;
+    width: 28px;
+    height: 43px;
+    border: 2px solid #7F7F85;
+    box-sizing: border-box;
+    border-radius: 18px;
+    margin: 0 auto 10px
+}
+
+#mouse-button .mouse .mouse-scroll {
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    width: 4px;
+    height: 11px;
+    margin-left: -2px;
+    border-radius: 3px;
+    background: #7F7F85
+}
+
+#mouse-button:hover .mouse .mouse-scroll {
+    transition: top 0.3s ease-out;
+    top: 20px;
+}

@@ -19,10 +19,11 @@
 */
 
 // Usage
-.example-one {
-  font-size: 100px;
-  @include textGlitch("example-one", 20, white, black, red, blue, 492, 123);
+.loadingGlitch {
+  font-size: 24.6px;
+  @include textGlitch("loadingGlitch", 40, white, transparent, red, blue, 120, 27);
 }
+
 .example-two {
   font-size: 52px;
   @include textGlitch("example-two", 10, red, black, white, green, 714, 50);
