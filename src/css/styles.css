@@ -122,3 +122,18 @@ footer{
 #timeline-heading,#speakertext{
   margin: 0 !important;
 }
+.sponsor{
+    margin-bottom:50px;
+    font-size:150%;
+    background:transparent;
+    font-family: 'Roboto', sans-serif;
+}
+.sponsors{
+    margin-bottom:2px!important;
+}
+.sponsor img{
+    margin-top:10px;
+}
+.sponsor img{
+    max-width:90%;
+}

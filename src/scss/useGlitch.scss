@@ -24,11 +24,6 @@
   @include textGlitch("loadingGlitch", 40, white, transparent, red, blue, 120, 27);
 }
 
-.example-two {
-  font-size: 52px;
-  @include textGlitch("example-two", 10, red, black, white, green, 714, 50);
-}
-
 
 /*
   (IMAGE) PARAMS
@@ -48,22 +43,4 @@
 }
 .glitch-dots {
   @include imgGlitch("glitch-dots", 20, 209, 252,0,0);
-}
-
-/*
-  (SVG) PARAMS
-  =================
-  @mixin svgGlitch($name, $intensity, $fillColor, $background, $width, $height, $top, $left)
-  =================
-  1. Namespace
-  2. Intensity
-  3. Fill Color
-  4. Background
-  5. Width (px)
-  6. Height (px)
-  5. Top (px, abs pos)
-  6. Left (px, abs pos)
-*/
-.example-four {
-  @include svgGlitch("example-four", 30, white, black, red, red, 100, 100, 200, 175);
 }
