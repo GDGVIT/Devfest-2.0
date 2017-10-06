@@ -7,6 +7,7 @@ import 'materialize-css/dist/js/materialize';
 import fadeParallax from './fadeout';
 import removeGlitch from './removeGlitch';
 import cardParallax from './cardParallax';
+import SmoothScroll from 'smooth-scroll';
 $(function () {
     var timelines = $('.cd-horizontal-timeline'),
         eventsMinDistance = 60;
@@ -384,6 +385,7 @@ $(function () {
     let bundle=loadCSS("./css/bundle.css");
     onloadCSS(bundle,function () {
         loadUI();
+        var scroll = new SmoothScroll('a[data-scroll]');
     });
 });
 function loadUI() {

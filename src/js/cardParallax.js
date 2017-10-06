@@ -3,29 +3,41 @@
  */
 
 export default  function () {
-    const $top=$('#devfest-logo-top');
-    $top.css('visibility','visible');
-    $('.landing-wrapper').after($top);
-    let $bottom=$('#devfest-fixed');
-    let top=$top.offset().top,bottom=$bottom.offset().top,flag=(scroll+top>=bottom);
-    let $doc=$(document);
+    let flag;
+    let scroll;
+    let top, bottom;
+    let $doc = $(document);
+    const $bottom = $('#devfest-fixed');
+    const $top = $('#devfest-logo-top');
+    $top.css('visibility', 'visible');
+    // $('.landing-wrapper').after($top);
+    function calculateOffset() {
+        top = $top.offset().top;
+        bottom = $bottom.offset().top;
+        scroll = $doc.scrollTop();
+        flag = scroll + top < bottom;
+    }
+    $(window).resize(function () {
+        calculateOffset();
+    });
     function handleScroll() {
-        let scroll=$doc.scrollTop();
-        console.log(scroll,top,bottom);
+        top = $top.offset().top;
         if(flag){
-            if(scroll+top<bottom){
+            if(top<bottom){
                 flag=false;
                 $bottom.css('visibility','hidden');
                 $top.css('visibility','visible');
             }
         }
         else {
-            if(scroll+top>=bottom){
+            if(top>=bottom){
                 flag=true;
                 $top.css('visibility','hidden');
                 $bottom.css('visibility','visible');
             }
         }
     }
+    calculateOffset();
+    handleScroll();
     document.onscroll=handleScroll;
 }

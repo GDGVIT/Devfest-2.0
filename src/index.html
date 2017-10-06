@@ -18,6 +18,7 @@
             font-size: 14px;
             background: #111113 url(img/Background.png) repeat;
             overflow-y: scroll;
+            overflow-x: hidden;
         }
         *{
             margin: 0;
@@ -127,23 +128,36 @@
             margin: 0 5px;
         }
         .button-hex{
-            margin: 10px 0;
-            background: url(img/button_white.png) no-repeat;
+            min-width: 200px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid;
             display: block;
-            width: 300px;
             text-decoration: none;
+            transition: background-color 0.4s ease-out;
         }
-        .button-hex.black{
+        .button-hex.blk{
+            border-color: black;
             color: black;
         }
-        .button-hex.white{
+        .button-hex.wht{
+            border-color: white;
+            color: white;
+        }
+        .button-hex.wht:hover{
+            background-color: white;
+            color: black;
+        }
+        .button-hex.blk:hover{
+            background-color: black;
             color: white;
         }
         .button-hex span{
+            color: inherit;
             display: block;
             width: 100%;
-            padding: 20px 0;
             text-align: center;
+            text-transform: uppercase;
         }
         .loadWrap{
             color: white;
@@ -168,10 +182,10 @@
             </div>
 
             <div id="landBtn" style="position:fixed;left:50%;transform:translateX(-50%);display: flex;justify-content: space-around;flex-wrap: wrap;">
-                <a id="watch-button" class="button-hex black" href="#">
+                <a id="watch-button" class="button-hex wht" href="#">
                     <span>Watch Promo Video</span>
                 </a>
-                <a id="register-button" class="button-hex black" href="#">
+                <a id="register-button" class="button-hex wht" href="#">
                     <span>Register</span>
                 </a>
             </div>
@@ -221,7 +235,7 @@
     </div>
 </div>
 <img id="devfest-logo-top" src="img/Devfest1.png" class="devfest-fixed" style="position:fixed;left: 50%;top: 50%;visibility: hidden;transform: translate(-50%,-50%);z-index: 10;">
-<div class="content-wrapper" style="display: none;">
+<div id="content-wrap" class="content-wrapper" style="display: none;">
     <div class="row">
         <div class="col s10 offset-s1 maincard" style="background-color: black;padding: 0;">
             <div class="logoParallax">
@@ -231,8 +245,8 @@
             </div>
             <div style="padding: 50px;">
                 <div class="container" style="text-align: center;">
-                    <div class="date-section container">
-                        <span>27-28<sup>th</sup> October | VIT UNIVERSITY</span>
+                    <div class="date-section">
+                        <p style="color: black;">27-28<sup>th</sup> October | VIT UNIVERSITY</p>
                     </div>
                 </div>
                 <br/>
@@ -268,8 +282,10 @@
                     </div>
                 </div>
                 <br>
-                <div class="reg-btn center">
-                    <button class="btn" style="background-color: transparent;border: 1px solid white;">Register</button>
+                <div>
+                    <a style="width: 200px;margin: 10px auto" class="button-hex wht" href="#">
+                        <span>Register</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -278,9 +294,11 @@
         <div class="ideathon-text">
             <span>ARE YOU AN IDEATOR OR ENTREPRENUER?</span>
             <span>THEN OUR <span id="ideathon" style="display: inline;">IDEATHON</span> IS FOR YOU</span><br>
-            <button class="btn"
-                    style="background-color: transparent;border: 1px solid black;color: black;box-shadow: 0;">KNOW MORE
-            </button>
+            <div>
+                <a style="width: 200px;margin: 10px auto" class="button-hex blk" href="#">
+                    <span>know more</span>
+                </a>
+            </div>
         </div>
     </div>
     <div class="timeline-wrapper">
@@ -328,33 +346,55 @@
 
         </section>
     </div>
-    <div class="speakersandsponsors white">
-        <h5 id="speakertext">SPEAKERS</h5><br><br>
-        <div class="row">
-            <div class="col s12 m6 l4">
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img id="cup24" src="img/dummy.png" style="width: 100px;">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content black white-text">
-                            <p>SELENA GOMEZ</p>
-                            <p>CEO of facebook</p>
+    <div class="speakersandsponsors white row" style="padding-top: 15px;">
+        <h5 class="center-align section-head">SPEAKERS</h5>
+        <div class="speakers-section container">
+            <div class="row">
+                <div class="col s12 m6 l4">
+                    <div class="card horizontal speaker">
+                        <div class="card-image">
+                            <img class="speaker-img responsive-img" src="img/speaker.jpg">
                         </div>
-                        <!-- <div class="card-action">
-
-                    </div> -->
+                        <div class="card-stacked">
+                            <div class="card-content black white-text">
+                                <p>SELENA GOMEZ</p>
+                                <p>CEO FACEBOOK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card horizontal speaker">
+                        <div class="card-image">
+                            <img class="speaker-img responsive-img" src="img/speaker.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content black white-text">
+                                <p>SELENA GOMEZ</p>
+                                <p>CEO FACEBOOK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 offset-m3 l4">
+                    <div class="card horizontal speaker">
+                        <div class="card-image">
+                            <img class="speaker-img responsive-img" src="img/speaker.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content black white-text">
+                                <p>SELENA GOMEZ</p>
+                                <p>CEO FACEBOOK</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col s12 m6 l4">Speaker 2</div>
-            <div class="col s12 m6 l4">Speaker 3</div>
         </div>
         <br>
         <!--Sponsors-->
-        <div class="row sponsors">
-            <h5 id="speakertext">SPONSORS</h5><br><br>
-            <br><br>
+        <div class="row sponsors container">
+            <h5 class="center-align section-head">SPONSORS</h5>
             <div class="container">
                 <div class="row">
                     <div class="col m6 s12 l4 sponsor center ">
@@ -416,10 +456,9 @@
     <footer>
         <div class="row">
             <img src="img/gdglogo.png" style="width:auto;float: left;" alt="">
-            <button class="btn"
-                    style="background-color: transparent;border: 1px solid white;color: white;float: right;margin-right: 60px;margin-top:20px;">
-                REGISTER
-            </button>
+            <a style="float: right;margin-right: 60px;margin-top:20px;" class="button-hex wht" href="#">
+                <span>Register</span>
+            </a>
         </div>
     </footer>
 </div>

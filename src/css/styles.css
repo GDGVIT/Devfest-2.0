@@ -5,7 +5,10 @@ body{
 
 }
 .landing-wrapper{
-    height: calc(100vh + 150px) !important;
+    height: calc(100vh + 500px) !important;
+}
+.section-head{
+    margin: 25px auto;
 }
 .img-div{
     padding-right: 100px;
@@ -16,10 +19,13 @@ body{
     height: auto;
 }
 .date-section{
-    background-color: white;
-    padding: 10px 15px;
     margin-top: 25px;
-
+    text-align: center;
+}
+.date-section p{
+    display: inline;
+    padding: 10px;
+    background-color: white;
 }
 .maincard{
     padding: 50px;
@@ -32,10 +38,9 @@ body{
 }
 /*88888*/
 div.small-img {
+    padding: 20px !important;
     vertical-align: top;
-    display: inline-block;
     text-align: center;
-    width: 120px;
 }
 
 .caption {
@@ -48,7 +53,7 @@ div.small-img {
 }
 .ideathon-text span{
     display: block;
-
+    font-size: large;
 }
 .ideathon-div{
     background-color: white;
@@ -82,10 +87,30 @@ footer{
     background-color: black;
     padding: 12px 0px 3px;
 }
-#cup24{
+.speaker-img{
+    width: 100px !important;
     -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 75%, 50% 100%, 0 100%, 0% 25%);
     clip-path: polygon(50% 0%, 100% 0, 100% 75%, 50% 100%, 0 100%, 0% 25%);
-
+}
+.speaker{
+    position: relative;
+}
+.speaker .card-stacked{
+    border: solid black;
+    border-width: 1px 1px 1px 0;
+    position: absolute;
+    transform: translateX(-50px);
+    z-index: 5;
+    width: 100%;
+    justify-content: center !important;
+}
+.speaker .card-image{
+    z-index:10;
+}
+.speaker .card-content{
+    transform: translateX(10px);
+    padding: 10px 10px 10px 50px !important;
+    flex-grow: 0 !important;
 }
 @media screen and (max-width: 600px )
 {
@@ -101,15 +126,6 @@ footer{
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-.card-content {
-    border-radius: 0 !important;
-    margin-top: 15px;
-    width: 106%;
-}
-.card-stacked{
-    background-color: white !important;
-    border-right: 1px solid black;
-}
 .events li a{
     top:100% !important;
 }
@@ -119,11 +135,11 @@ footer{
 .time-in-timeline{
     margin-top: 10px;
 }
-#timeline-heading,#speakertext{
+#timeline-heading,.speakertext{
   margin: 0 !important;
 }
 .sponsor{
-    margin-bottom:50px;
+    margin-bottom:20px;
     font-size:150%;
     background:transparent;
     font-family: 'Roboto', sans-serif;

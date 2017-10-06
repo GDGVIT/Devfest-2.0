@@ -9,6 +9,7 @@ const connect=require('gulp-connect');
 const imagemin = require('gulp-imagemin');
 const cleanCSS = require('gulp-clean-css');
 const htmlmin = require('gulp-htmlmin');
+const ghPages = require('gulp-gh-pages');
 const cssAssets = [
     `${__dirname}/src/css/materialize.css`,
     `${__dirname}/src/css/timelinecss.css`,
@@ -73,7 +74,10 @@ gulp.task('watch',function () {
     gulp.watch(`${__dirname}/src/js/*`,['js']);
     gulp.watch(`${__dirname}/src/img/*`,['images']);
 });
-
+gulp.task('deploy', function() {
+    return gulp.src(`${__dirname}/dist/**/*`)
+        .pipe(ghPages());
+});
 gulp.task('default',['css','js','images','html','manifest','server','watch'],function () {
    console.log('Server connected at http://localhost:8000');
    console.log('Watching for changes.');

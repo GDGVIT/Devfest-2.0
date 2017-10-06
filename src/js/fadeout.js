@@ -8,8 +8,24 @@ export default function fadeParallax() {
     var hide = $('.mobHide img,#glitch-left img,#mouse-button');
     var doc = $(document);
     $(function () {
+        let hideStat=false,setupStat=false;
+        (function setupHide() {
+            let arg=arguments;
+                console.log('setup hide triggered !');
+                for(let i=0;i<arg.length;i++){
+                    arg[i].on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                        if ($(this).hasClass('fadeOutRight') || $(this).hasClass('fadeOutLeft') || $(this).hasClass('fadeOut')) {
+                            $(this).addClass('hide');
+                        }
+                    });
+                    if (doc.scrollTop() > 250){
+                        arg[i].addClass('hide');
+                    }
+                }
+            // }
+        })(right,left,hide);
         $(window).scroll(function () {
-            if (doc.scrollTop() > 150) {
+            if (doc.scrollTop() > 250) {
                 if (right.hasClass('fadeInRight') || left.hasClass('fadeInLeft')) {
                     right.removeClass('fadeInRight');
                     left.removeClass('fadeInLeft');
@@ -18,12 +34,11 @@ export default function fadeParallax() {
                 right.addClass('animated fadeOutRight');
                 left.addClass('animated fadeOutLeft');
                 hide.addClass('animated fadeOut');
-
             } else {
                 if (right.hasClass('fadeOutRight') || left.hasClass('fadeOutLeft')) {
-                    right.removeClass('fadeOutRight');
-                    left.removeClass('fadeOutLeft');
-                    hide.removeClass('fadeOut');
+                    right.removeClass('fadeOutRight hide');
+                    left.removeClass('fadeOutLeft hide');
+                    hide.removeClass('fadeOut hide');
                 }
                 right.addClass('fadeInRight');
                 left.addClass('fadeInLeft');
