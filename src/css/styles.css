@@ -156,3 +156,17 @@ footer{
 .sponsor img{
     max-width:90%;
 }
+.slick-prev:before {
+    color: black !important;
+}
+.slick-next:before {
+    color: black !important;
+}
+.slick-next {
+    right: 10px !important;
+    top: 23% !important;
+}
+.slick-prev {
+    left: 10px !important;
+    top: 23% !important;
+}

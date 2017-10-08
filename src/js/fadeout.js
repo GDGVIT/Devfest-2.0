@@ -8,6 +8,7 @@ export default function fadeParallax() {
     var hide = $('.mobHide img,#glitch-left img,#mouse-button');
     var doc = $(document);
     $(function () {
+
         let hideStat=false,setupStat=false;
         (function setupHide() {
             let arg=arguments;
@@ -44,6 +45,15 @@ export default function fadeParallax() {
                 left.addClass('fadeInLeft');
                 hide.addClass('fadeIn');
             }
+        });
+
+        $('.slider-class').slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            arrows : true
+
         });
 
 
