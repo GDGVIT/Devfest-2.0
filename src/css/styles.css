@@ -181,9 +181,20 @@ footer{
     border: 2px solid #111113;
 }
 .cardWhite {
+    width: 100% !important;
     cursor: auto !important;
     background-color: white;
     color: black !important;
+}
+@media only screen and (min-width: 601px) {
+    .cardWhite {
+        width: 90% !important;
+    }
+}
+@media only screen and (min-width: 993px) {
+    .cardWhite {
+        width: 80% !important;
+    }
 }
 .slick-prev:before {
     color: black !important;

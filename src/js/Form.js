@@ -1,17 +1,19 @@
 /**
  * Created by Vineeth on 09-10-2017.
  */
+import SmoothScroll from 'smooth-scroll';
 export default  function () {
     $('#registerContainer').click(function(){
-        $(this).css({
-            'width':'80%'
-        }).removeClass('wht').addClass('cardWhite');
+        let scroll = new SmoothScroll();
+        let anchor = document.querySelector( '#registerContainer' );
+        scroll.animateScroll( anchor );
+        $(this).removeClass('wht').addClass('cardWhite');
         $(this).find('#register').css({
             'height':'100%',
         })
     });
     function send(x){
-        let name,regno,email,gender,hosteller,participating,obj={};
+        let obj={};
         for(let i=0;i<x.length;i++){
             obj[x[i].name]=x[i].value;
         }
@@ -19,7 +21,9 @@ export default  function () {
         $.ajax({
             url:'https://139.59.82.201',
             type:'post',
-            data:obj,
+            data:JSON.stringify(obj),
+            'processData': false,
+            'contentType': 'application/json',
             success:function (data) {
                 console.log(data);
                 $('#register').parent().html('')
