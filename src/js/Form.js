@@ -12,6 +12,9 @@ export default  function () {
             'height':'100%',
         })
     });
+    $('form#register').click(function (e) {
+        e.stopPropagation();
+    });
     function send(x){
         let obj={};
         for(let i=0;i<x.length;i++){

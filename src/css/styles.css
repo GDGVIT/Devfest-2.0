@@ -159,7 +159,7 @@ footer{
 #registerContainer{
     cursor: pointer;
     width: 200px;
-    transition: width .3s,background-color 0.4s ease-out;
+    transition: width .3s;
 }
 #register{
     margin: 0;
