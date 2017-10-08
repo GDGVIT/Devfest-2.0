@@ -7,6 +7,9 @@ body{
 .landing-wrapper{
     height: calc(100vh + 500px) !important;
 }
+.speakersandsponsors{
+    margin-bottom: 0 !important;
+}
 .section-head{
     margin: 25px auto;
 }
