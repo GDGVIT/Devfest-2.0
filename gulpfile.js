@@ -15,7 +15,9 @@ const cssAssets = [
     `${__dirname}/src/css/timelinecss.css`,
     `${__dirname}/src/css/mouse.css`,
     `${__dirname}/src/css/animate.css`,
-    `${__dirname}/src/css/styles.css`
+    `${__dirname}/src/css/styles.css`,
+    `${__dirname}/src/css/slick.css`,
+    `${__dirname}/src/css/slick-theme.css`
 ];
 gulp.task('server',function () {
     connect.server({

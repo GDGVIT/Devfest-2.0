@@ -17,7 +17,7 @@ export default  function () {
         }
         console.log(obj);
         $.ajax({
-            url:'http://139.59.82.201',
+            url:'https://139.59.82.201',
             type:'post',
             data:obj,
             success:function (data) {

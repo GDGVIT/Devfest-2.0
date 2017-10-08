@@ -9,6 +9,7 @@ import removeGlitch from './removeGlitch';
 import cardParallax from './cardParallax';
 import SmoothScroll from 'smooth-scroll';
 import form from './Form';
+import 'slick-carousel';
 $(function () {
     var timelines = $('.cd-horizontal-timeline'),
         eventsMinDistance = 60;
@@ -388,6 +389,7 @@ $(function () {
         loadUI();
         var scroll = new SmoothScroll('a[data-scroll]');
     });
+
 });
 function loadUI() {
     $('.content-wrapper').css('display','block');

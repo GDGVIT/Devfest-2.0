@@ -180,8 +180,22 @@ footer{
 [type=radio].with-gap:checked+label:after, [type=radio].with-gap:checked+label:before, [type=radio]:checked+label:after {
     border: 2px solid #111113;
 }
-.cardWhite{
+.cardWhite {
     cursor: auto !important;
     background-color: white;
     color: black !important;
+}
+.slick-prev:before {
+    color: black !important;
+}
+.slick-next:before {
+    color: black !important;
+}
+.slick-next {
+    right: 10px !important;
+    top: 23% !important;
+}
+.slick-prev {
+    left: 10px !important;
+    top: 23% !important;
 }
