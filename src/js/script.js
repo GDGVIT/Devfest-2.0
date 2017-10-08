@@ -8,6 +8,7 @@ import fadeParallax from './fadeout';
 import removeGlitch from './removeGlitch';
 import cardParallax from './cardParallax';
 import SmoothScroll from 'smooth-scroll';
+import form from './Form';
 $(function () {
     var timelines = $('.cd-horizontal-timeline'),
         eventsMinDistance = 60;
@@ -394,4 +395,5 @@ function loadUI() {
     cardParallax();
     console.log('stylesheet loaded !');
     fadeParallax();
+    form();
 }

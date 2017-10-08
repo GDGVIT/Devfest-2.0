@@ -134,6 +134,7 @@
             border: 1px solid;
             display: block;
             text-decoration: none;
+            background-color: transparent;
             transition: background-color 0.4s ease-out;
         }
         .button-hex.blk{
@@ -283,9 +284,67 @@
                 </div>
                 <br>
                 <div>
-                    <a style="width: 200px;margin: 10px auto" class="button-hex wht" href="#">
+                    <div id="registerContainer" style="margin: 10px auto;" class="button-hex wht">
                         <span>Register</span>
-                    </a>
+                        <form method="post" id="register" style="" class="row">
+                            <div class="input-field col s12">
+                                <input required name="name" id="name" type="text">
+                                <label for="name">Name</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input required name="regno" id="reg" type="text">
+                                <label for="reg">Registration Number</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input required name="phone" id="phone" type="text">
+                                <label for="phone">Phone Number</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input required name="email" id="email" type="email" class="validate">
+                                <label for="email">Email id</label>
+                            </div>
+                            <span style="font-weight: 300;font-size: 10pt;text-align: left; text-transform: capitalize;padding: 0 .75rem;margin: 5px 0;" class="left">gender</span>
+                            <div class="row">
+                                <p class="col s12 m4">
+                                    <input required class="with-gap" name="gender" value="Male" type="radio" id="male"  />
+                                    <label class="left" for="male">Male</label>
+                                </p>
+                                <p class="col s12 m4">
+                                    <input required class="with-gap" name="gender" value="Female" type="radio" id="female"  />
+                                    <label class="left" for="female">Female</label>
+                                </p>
+                            </div>
+                            <span style="font-weight: 300;font-size: 10pt;text-align: left; text-transform: capitalize;padding: 0 .75rem;margin: 5px 0;" class="left">Dayborader or hosteller ?</span>
+                            <div class="row">
+                                <p class="col s12 m4">
+                                    <input required class="with-gap" name="hosteller" value="Day boarder" type="radio" id="dayboard"  />
+                                    <label class="left" for="dayboard">Day boarder</label>
+                                </p>
+                                <p class="col s12 m4">
+                                    <input required class="with-gap" name="hosteller" value="hosteller" type="radio" id="hostel"  />
+                                    <label class="left" for="hostel">hosteller</label>
+                                </p>
+                            </div>
+                            <div class="input-field col s12" style="margin-top: 0;">
+                                <input required name="room" id="room" type="text">
+                                <label for="room">Room and block</label>
+                            </div>
+                            <span style="font-weight: 300;font-size: 10pt;text-align: left; text-transform: capitalize;padding: 0 .75rem;margin: 5px 0;" class="left">Hackathon or ideathon ?</span>
+                            <div class="row">
+                                <p class="col s12 m4">
+                                    <input required class="with-gap" name="participating" value="Hackathon" type="radio" id="hack"  />
+                                    <label class="left" for="hack">Hackathon</label>
+                                </p>
+                                <p class="col s12 m4">
+                                    <input required class="with-gap" name="participating" value="Ideathon" type="radio" id="idea"  />
+                                    <label class="left" for="idea">Ideathon</label>
+                                </p>
+                            </div>
+                            <button id="submitBtn" style="width: 200px;margin: 10px auto" class="button-hex blk" type="submit">
+                                <span>Submit</span>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -439,16 +498,6 @@
                             <img class="responsive-img" src="img/npm.png" >
                         </div>
                     </div>
-
-                    <!-- <div class="col m6 s12 l6 offset-l3 offset-m3 sponsor center ">Title Sponsor<br>
-                    <img src="img/cardea-labs.png" style="max-height:220px; max-width:220px">
-                    <img src="img/mibeat.png">
-                    </div> -->
-
-                    <!--        <div class="col m6 s12 l6 offset-l3 offset-m3 sponsor center ">Education Partner<br><img src="img/chalkstreet2.png"></div>
-                           <div class="col m6 s12 l6 offset-l3 offset-m3 sponsor center ">Platform Partner<br><img src="img/venturesity.png"></div>
-                     -->
-
                 </div>
             </div>
         </div><!--End of sponsors-->
