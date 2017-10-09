@@ -339,17 +339,19 @@
                             <div id="internal_info">
                             <div class="row">
                             <p class="col s12 m4">
-                                    <input required class="with-gap" name="hosteller" value="Day boarder" type="radio" id="dayboard"  />
+                                    <input class="with-gap" data-error=".hosteller_error" name="hosteller" value="Day boarder" type="radio" id="dayboard"  />
                                     <label class="left" for="dayboard">Day Boarder</label>
                                 </p>
                                 <p class="col s12 m4">
-                                    <input required class="with-gap" name="hosteller" value="hosteller" type="radio" id="hostel"  />
+                                    <input class="with-gap" name="hosteller" value="hosteller" type="radio" id="hostel"  />
                                     <label class="left" for="hostel">Hosteller</label>
                                 </p>
+                                 <div class="col s12 hosteller_error" style="margin-top: 10px">
+                                </div>
                             </div>
                             <div class="row" id="hosteller_info">
                              <div class="input-field col s12 m6 l6">
-                                    <select required name="block" id="block">
+                                    <select name="block" id="block">
                                       <option value="">select an option..</option>
                                       <optgroup label="Mens hostel">
                                         <option value="mh_a">MH A</option>
@@ -413,13 +415,15 @@
                             <div class="row">
                             <span style="font-weight: 300;font-size: 10pt;text-align: left; text-transform: capitalize;padding: 0 .75rem;margin: 5px 0;" class="left">Hackathon or ideathon ?</span>
                                 <p class="col s12 m4">
-                                    <input required class="with-gap" name="participating" value="Hackathon" type="checkbox" id="hack"  />
+                                    <input class="with-gap" data-error=".participating_error" name="participating" value="Hackathon" type="checkbox" id="hack"  />
                                     <label class="left" for="hack">Hackathon</label>
                                 </p>
                                 <p class="col s12 m4">
-                                    <input required class="with-gap" name="participating" value="Ideathon" type="checkbox" id="idea"  />
+                                    <input class="with-gap" name="participating" value="Ideathon" type="checkbox" id="idea"  />
                                     <label class="left" for="idea">Ideathon</label>
                                 </p>
+                                <div class="col s12 participating_error" style="margin-top: 10px">
+                                </div>
                             </div>
                             <button id="submitBtn" style="width: 200px;margin: 10px auto" class="button-hex blk" type="submit">
                                 <span>Submit</span>

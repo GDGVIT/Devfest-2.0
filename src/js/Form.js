@@ -59,7 +59,20 @@ export default  function () {
             gender:{
                 required:true
             },
+            participating:{
+                required:true
+            },
+            hosteller:{
+                required:function(element){
+                    return $("input[name='internal_external']:checked").val() == 'internal'
+                }
+            },
             block:{
+                required: function(element){
+                    return $("input[name='internal_external']:checked").val() == 'internal' && $("input[name='hosteller']:checked").val() == 'hosteller'; 
+                }
+            },
+            roomno:{
                 required: function(element){
                     return $("input[name='internal_external']:checked").val() == 'internal' && $("input[name='hosteller']:checked").val() == 'hosteller'; 
                 }
