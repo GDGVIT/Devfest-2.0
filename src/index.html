@@ -75,6 +75,22 @@
             max-width: 1280px;
             width: 90%;
         }
+        div.input-field{
+            height: 70px;
+        }
+        div.error-msg{
+            margin-top: -20px;
+            color: #f44336;
+            font-size: 11px;
+        }
+        .submit-error-text{
+            color: #F44336;
+            text-align: center;
+            display: none;
+        }
+        .dropdown-content li>a, .dropdown-content li>span {
+            color: #777777 !important;
+        }
         @media only screen and (min-width: 601px) {
             .logo-wrap {
                 width: 85%; }
@@ -290,40 +306,39 @@
                     <div id="registerContainer" style="margin: 10px auto;" class="button-hex wht">
                         <span>Register</span>
                         <form method="post" id="register" style="" class="row">
-                            <div class="input-field col s12">
-                                <input required name="name" id="name" type="text">
-                                <label for="name">Name</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input required name="regno" id="reg" type="text">
-                                <label for="reg">Registration Number</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input required name="phone" id="phone" type="text">
-                                <label for="phone">Phone Number</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input required name="email" id="email" type="email" class="validate">
-                                <label for="email">Email id</label>
-                            </div>
-                            <span style="font-weight: 300;font-size: 10pt;text-align: left; text-transform: capitalize;padding: 0 .75rem;margin: 5px 0;" class="left">gender</span>
-                            <div class="row">
-                                <p class="col s12 m4">
-                                    <input required class="with-gap" name="gender" value="Male" type="radio" id="male"  />
-                                    <label class="left" for="male">Male</label>
+                        <div class="row" style="margin-bottom: 0px !important;">
+                        <br>
+                            <span style="font-weight: 300;font-size: 10pt;text-align: left;padding: 0 .75rem;margin: 5px 0;" class="left">I am :</span>
+                                <p class="col s12 m6">
+                                    <input data-error=".int_ext_error" class="with-gap" name="internal_external" value="internal" type="radio" id="internal"  />
+                                    <label class="left" for="internal">VIT Vellore Student</label>
                                 </p>
-                                <p class="col s12 m4">
-                                    <input required class="with-gap" name="gender" value="Female" type="radio" id="female"  />
-                                    <label class="left" for="female">Female</label>
-                                </p>
-                            </div>
-                            <span style="font-weight: 300;font-size: 10pt;text-align: left; text-transform: capitalize;padding: 0 .75rem;margin: 5px 0;" class="left">Who are you ?</span>
-                            <div class="row">
-                                <p class="col s12 m4">
-                                    <input required class="with-gap" name="hosteller" value="External" type="radio" id="external"  />
+                                <p class="col s12 m6">
+                                    <input class="with-gap" name="internal_external" value="external" type="radio" id="external"  />
                                     <label class="left" for="external">External</label>
                                 </p>
-                                <p class="col s12 m4">
+                                <div class="col s12 int_ext_error" style="margin-top: 10px">
+                                </div>
+                        </div>
+                            <div class="input-field col s12 m6">
+                                <input required name="name" id="name" type="text">
+                                <label for="name" id="name-label">Name</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input required name="regno" id="reg" type="text">
+                                <label for="reg">College Registration Number</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input required name="phone" id="phone" type="number">
+                                <label for="phone">Phone Number</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input required name="email" id="email" type="email">
+                                <label for="email">Email id</label>
+                            </div>
+                            <div id="internal_info">
+                            <div class="row">
+                            <p class="col s12 m4">
                                     <input required class="with-gap" name="hosteller" value="Day boarder" type="radio" id="dayboard"  />
                                     <label class="left" for="dayboard">Day Boarder</label>
                                 </p>
@@ -332,12 +347,71 @@
                                     <label class="left" for="hostel">Hosteller</label>
                                 </p>
                             </div>
-                            <div class="input-field col s12" style="margin-top: 0;" id="roomandblock">
-                                <input name="room" id="room" type="text">
-                                <label for="room">Room and block</label>
+                            <div class="row" id="hosteller_info">
+                             <div class="input-field col s12 m6 l6">
+                                    <select required name="block" id="block">
+                                      <option value="">select an option..</option>
+                                      <optgroup label="Mens hostel">
+                                        <option value="mh_a">MH A</option>
+                                        <option value="mh_b">MH B</option>
+                                        <option value="mh_ba">MH B-annexe</option>
+                                        <option value="mh_c">MH C</option>
+                                        <option value="mh_d">MH D</option>
+                                        <option id="6" value="mh_da">MH D-annexe</option>
+                                        <option value="mh_e">MH E</option>
+                                        <option value="mh_f">MH F</option>
+                                        <option value="mh_g">MH G</option>
+                                        <option value="mh_h">MH H</option>
+                                        <option value="mh_j">MH J</option>
+                                        <option value="mh_k">MH K</option>
+                                        <option value="mh_l">MH L</option>
+                                        <option value="mh_m">MH M</option>
+                                        <option value="mh_ma">MH M-annexe</option>
+                                        <option value="mh_n">MH N</option>
+                                        <option value="mh_p">MH P</option>
+                                        <option value="mh_other">Others..</option>
+                                      </optgroup>
+                                      <optgroup label="Ladies Hostel">
+                                        <option value="lh_a">LH A</option>
+                                        <option value="lh_b">LH B</option>
+                                        <option value="lh_c">LH C</option>
+                                        <option value="lh_d">LH D</option>
+                                        <option value="lh_e">LH E</option>
+                                        <option value="lh_ea">LH E Annexe</option>
+                                        <option value="lh_other">Others..</option>
+                                      </optgroup>
+                                    </select>
+                                    <label>Hostel Block</label>
+                                  </div>
+                                  <div class="col s12 l6 m6 input-field">
+                                    <input type="text" name="roomno" id="roomno" class="validate"/>
+                                    <label for="roomno">Room number</label>
+                                    <br>
+                                  </div>
                             </div>
-                            <span style="font-weight: 300;font-size: 10pt;text-align: left; text-transform: capitalize;padding: 0 .75rem;margin: 5px 0;" class="left">Hackathon or ideathon ?</span>
+                            </div>
+                            <div id="external_info">
+                            <div class="col s12 l12 m12 input-field">
+                                    <input type="text" name="external_college" id="external_college" class="validate"/>
+                                    <label for="external_college">College name</label>
+                            </div>
+                            </div>
+                            <span style="font-weight: 300;font-size: 10pt;text-align: left; text-transform: capitalize;padding: 0 .75rem;margin: 5px 0;" class="left">gender</span>
                             <div class="row">
+                                <p class="col s12 m4">
+                                    <input required class="with-gap" data-error=".gender_error" name="gender" value="Male" type="radio" id="male"  />
+                                    <label class="left" for="male">Male</label>
+                                </p>
+                                <p class="col s12 m4">
+                                    <input required class="with-gap" data-error=".gender_error" name="gender" value="Female" type="radio" id="female"  />
+                                    <label class="left" for="female">Female</label>
+                                </p>
+                                <div class="col s12 gender_error" style="margin-top: 10px">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                            <span style="font-weight: 300;font-size: 10pt;text-align: left; text-transform: capitalize;padding: 0 .75rem;margin: 5px 0;" class="left">Hackathon or ideathon ?</span>
                                 <p class="col s12 m4">
                                     <input required class="with-gap" name="participating" value="Hackathon" type="checkbox" id="hack"  />
                                     <label class="left" for="hack">Hackathon</label>
@@ -350,6 +424,7 @@
                             <button id="submitBtn" style="width: 200px;margin: 10px auto" class="button-hex blk" type="submit">
                                 <span>Submit</span>
                             </button>
+                            <h6 class="submit-error-text">Please fill all the fields</h6>
                         </form>
                     </div>
                 </div>
@@ -629,6 +704,7 @@
     </footer>
 </div>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
 <script>
     var wrap = document.getElementsByClassName('landing-wrapper')[0];
     var x = document.getElementById('x-coord');
