@@ -29,7 +29,7 @@ export default  function () {
         }
         console.log(obj);
         $.ajax({
-            url:'http://139.59.82.201',
+            url:'http://139.59.82.201:8081',
             type:'post',
             data:JSON.stringify(obj),
             'processData': false,
@@ -42,7 +42,7 @@ export default  function () {
                 //     text: "Stay tuned!!",
                 //     timer: 2000,
                 //     showConfirmButton: false,
-                //     imageUrl: "sweetalert-master/example/images/thumbs-up.jpg"
+                //
                 // });
                 $('#register').parent().html('')
             }

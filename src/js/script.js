@@ -10,7 +10,7 @@ import cardParallax from './cardParallax';
 import SmoothScroll from 'smooth-scroll';
 import form from './Form';
 import 'slick-carousel';
-import swal from 'sweetalert2'
+import swal from 'sweetalert2/dist/sweetalert2.all.min.js';
 $(function () {
     var timelines = $('.cd-horizontal-timeline'),
         eventsMinDistance = 60;
