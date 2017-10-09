@@ -16,7 +16,7 @@ export default  function () {
     $('#hostel').on('click', function() {
        $('#roomandblock').fadeIn(1500);
     });
-    $('#dayboard').on('click', function () {
+    $('#dayboard,#external').on('click', function () {
         $('#roomandblock').fadeOut();
     });
     $('form#register').click(function (e) {

@@ -180,6 +180,10 @@ footer{
 [type=radio].with-gap:checked+label:after, [type=radio].with-gap:checked+label:before, [type=radio]:checked+label:after {
     border: 2px solid #111113;
 }
+[type=checkbox]:checked+label:before{
+    border-right: 2px solid #111113 !important;
+    border-bottom: 2px solid #111113 !important;
+}
 .cardWhite {
     width: 100% !important;
     cursor: auto !important;
