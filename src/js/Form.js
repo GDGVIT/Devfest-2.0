@@ -12,6 +12,13 @@ export default  function () {
             'height':'100%',
         })
     });
+    $('#roomandblock').hide();
+    $('#hostel').on('click', function() {
+       $('#roomandblock').fadeIn(1500);
+    });
+    $('#dayboard').on('click', function () {
+        $('#roomandblock').fadeOut();
+    });
     $('form#register').click(function (e) {
         e.stopPropagation();
     });
@@ -22,13 +29,21 @@ export default  function () {
         }
         console.log(obj);
         $.ajax({
-            url:'https://139.59.82.201',
+            url:'http://139.59.82.201:8081',
             type:'post',
             data:JSON.stringify(obj),
             'processData': false,
             'contentType': 'application/json',
             success:function (data) {
                 console.log(data);
+                alert("Successfully register");
+                // swal({
+                //     title: "Thanks for registering!",
+                //     text: "Stay tuned!!",
+                //     timer: 2000,
+                //     showConfirmButton: false,
+                //
+                // });
                 $('#register').parent().html('')
             }
         })
