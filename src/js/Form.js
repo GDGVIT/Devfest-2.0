@@ -37,5 +37,4 @@ export default  function () {
        e.preventDefault();
        send($(this).serializeArray());
     });
-
 }
