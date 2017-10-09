@@ -22,7 +22,7 @@ export default  function () {
         }
         console.log(obj);
         $.ajax({
-            url:'https://139.59.82.201',
+            url:'http://139.59.82.201',
             type:'post',
             data:JSON.stringify(obj),
             'processData': false,
