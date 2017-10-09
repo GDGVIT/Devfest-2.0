@@ -200,6 +200,9 @@ footer{
         width: 80% !important;
     }
 }
+.timeline-text{
+    font-size: small;
+}
 .slick-prev:before {
     color: black !important;
 }
