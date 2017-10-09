@@ -386,6 +386,7 @@ $(function () {
     console.log('materialize',Materialize);
     // ------ Scripts here --------
     let bundle=loadCSS("./css/bundle.css");
+    // loadCSS( "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" );
     onloadCSS(bundle,function () {
         loadUI();
         var scroll = new SmoothScroll('a[data-scroll]');

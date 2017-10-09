@@ -12,6 +12,7 @@ const htmlmin = require('gulp-htmlmin');
 const ghPages = require('gulp-gh-pages');
 const cssAssets = [
     `${__dirname}/src/css/materialize.css`,
+    `${__dirname}/src/css/font-awesome.css`,
     `${__dirname}/src/css/timelinecss.css`,
     `${__dirname}/src/css/mouse.css`,
     `${__dirname}/src/css/animate.css`,
@@ -52,6 +53,11 @@ gulp.task('images',function () {
         .pipe(gulp.dest(`${__dirname}/dist/img`))
         .pipe(connect.reload());
 });
+gulp.task('fonts',function () {
+    gulp.src(`${__dirname}/src/fonts/*`)
+        .pipe(gulp.dest(`${__dirname}/dist/fonts`))
+        .pipe(connect.reload());
+});
 gulp.task('manifest',function () {
     gulp.src(`${__dirname}/src/manifest.json`)
         .pipe(gulp.dest(`${__dirname}/dist`))
@@ -80,7 +86,7 @@ gulp.task('deploy', function() {
     return gulp.src(`${__dirname}/dist/**/*`)
         .pipe(ghPages());
 });
-gulp.task('default',['css','js','images','html','manifest','server','watch'],function () {
+gulp.task('default',['css','js','images','fonts','html','manifest','server','watch'],function () {
    console.log('Server connected at http://localhost:8000');
    console.log('Watching for changes.');
 });
