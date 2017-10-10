@@ -307,3 +307,15 @@ ol.progress-track li.progress-todo .icon-wrap .icon-check-mark,
 ol.progress-track li.progress-todo .icon-wrap .icon-down-arrow {
     display: none;
 }
+.social{
+    display: inline-block;
+}
+.social li{
+    opacity: 0.4;
+    transition: opacity 0.3s ease-out;
+    margin: 10px 20px 10px 0;
+    display: inline-block;
+}
+.social li:hover{
+    opacity: 1;
+}
