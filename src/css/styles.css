@@ -41,6 +41,7 @@ body{
 }
 /*88888*/
 div.small-img {
+    height: 180px;
     padding: 20px !important;
     vertical-align: top;
     text-align: center;
