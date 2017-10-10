@@ -25,7 +25,7 @@ export default  function () {
             regno:{
                 required: true,
                 regex: {
-                    param:"^[a-zA-Z]{3,4}$",
+                    param:"1([0-9])([a-zA-Z]{3})([0-9]{4})",
                     depends: function(element) {
                         console.log("I am checked")
                         return ($("#internal").is(":checked"));
@@ -153,6 +153,7 @@ export default  function () {
         e.stopPropagation();
     });
     function send(x){
+        let $reg=$('#register');
         let obj={};
         for(let i=0;i<x.length;i++){
             obj[x[i].name]=x[i].value;
@@ -166,15 +167,36 @@ export default  function () {
             'contentType': 'application/json',
             success:function (data) {
                 console.log(data);
-                alert("Successfully register");
-                // swal({
-                //     title: "Thanks for registering!",
-                //     text: "Stay tuned!!",
-                //     timer: 2000,
-                //     showConfirmButton: false,
-                //
-                // });
-                $('#register').parent().html('')
+                $('#progress-form').removeClass('progress-current');
+                $('#progress-meetup').removeClass('progress-todo').addClass('progress-done progress-current');
+                if(data.status){
+                    $reg.after($(
+                        `<div class="container center-align">
+    <i class="fa fa-meetup fa-5x" aria-hidden="true"></i>
+    <h5 class="center-align">Almost there !</h5><br>
+    <h6>Complete the registration by sending a RSVP in meetup.</h6>
+    <a target="_blank" style="width: 200px;margin: 10px auto" class="button-hex blk rsvp" href="https://www.meetup.com/GDG-VIT/events/242833405/">RSVP NOW !</a>    
+</div>`
+                    ));
+                }
+                else{
+                    $reg.after($(
+                        `<div class="container center-align">
+    <i class="fa fa-meetup fa-5x" aria-hidden="true"></i>
+    <h5>You have already registered !</h5><br>
+    <h6 style="font-size: small;">We know you love our events, but its deja vu all over again.</h6><br>
+    <h6>Check yor RSVP in meetup.</h6>
+    <a target="_blank" style="width: 200px;margin: 10px auto" class="button-hex blk rsvp" href="https://www.meetup.com/GDG-VIT/events/242833405/">Check RSVP</a>
+</div>`
+                    ));
+                }
+                $('.rsvp').click(function () {
+                    $('#progress-meetup').removeClass('progress-current');
+                });
+                $reg.remove();
+                let scroll = new SmoothScroll();
+                let anchor = document.querySelector( '#registerContainer' );
+                scroll.animateScroll( anchor );
             }
         })
     }
