@@ -6,8 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=0.7, maximum-scale=0.7, minimum-scale=0.7">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Devfest 17 portal</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="manifest" href="./manifest.json">
-    <script src="https://use.fontawesome.com/aadb5a3bee.js"></script>
     <style>
         html{
             background-color: #111113;
@@ -25,8 +25,8 @@
             margin: 0;
             padding: 0;
         }
-        p,b,h1,h2,h3,h4,h5,h6,span{
-            font-family: monospace !important;
+        a,p,b,h1,h2,h3,h4,h5,h6,span{
+            font-family: 'Roboto', sans-serif;
         }
         body::-webkit-scrollbar-track
         {
@@ -74,6 +74,25 @@
             margin: 0 auto;
             max-width: 1280px;
             width: 90%;
+        }
+        div.input-field{
+            height: 70px;
+        }
+        div.error-msg{
+            margin-top: -20px;
+            color: #f44336;
+            font-size: 11px;
+        }
+        .submit-error-text{
+            color: #F44336;
+            text-align: center;
+            display: none;
+        }
+        .dropdown-content li>a, .dropdown-content li>span {
+            color: #777777 !important;
+        }
+        span.caret{
+            text-align: right !important;
         }
         @media only screen and (min-width: 601px) {
             .logo-wrap {
@@ -189,7 +208,7 @@
                 <a id="watch-button" class="button-hex wht" href="#">
                     <span>Watch Promo Video</span>
                 </a>
-                <a id="register-button" class="button-hex wht" data-scroll href="#content-wrap">
+                <a id="register-button" class="button-hex wht registerRedirect" href="#content-wrap">
                     <span>Register</span>
                 </a>
             </div>
@@ -250,7 +269,7 @@
             <div style="padding: 50px;">
                 <div class="container" style="text-align: justify;">
                     <div class="date-section">
-                        <p style="color: black; display: inline-block;">27-28<sup>th</sup> October | VIT UNIVERSITY</p>
+                      <p style="color: black; display: inline-block;"><span class="date-block"><i class="fa fa-calendar"></i> 27-28<sup>th</sup> October</span> <span class="hide-on-med-and-down">|</span> <span class="date-block"><i class="fa fa-map-marker"></i> VIT UNIVERSITY</span></p>
                     </div>
                 </div>
                 <br/>
@@ -266,7 +285,7 @@
                 <div class="row perks-section" style="color: white;">
                     <div class="col m2 offset-m1 s6 small-img">
                         <img src="img/championship4.png" alt="champion">
-                        <span class="caption">Prizes worth 5 lacs</span>
+                        <span class="caption">Prizes worth <span style="display: block;"><i class="fa fa-inr" style="font-family: FontAwesome!important;"></i> 5 lacs</span></span>
                     </div>
                     <div class="col m2 s6 small-img">
                         <img src="img/person1.png" alt="person" id="personlogo">
@@ -282,74 +301,163 @@
                     </div>
                     <div class="col m2 s6 offset-s3 small-img">
                         <img src="img/plain2.png" alt="schwags">
-                        <span class="caption">Schwags &amp; foods</span>
+                        <span class="caption">Schwags &amp; exciting goodies.</span>
                     </div>
                 </div>
                 <br>
                 <div>
                     <div id="registerContainer" style="margin: 10px auto;" class="button-hex wht">
                         <span>Register</span>
+                        <div id="progress" class="hide">
+                            <ol class="progress-track">
+                                <li id="progress-form" class="progress-done progress-current">
+                                    <center>
+                                        <div class="icon-wrap">
+                                            <!--<svg class="icon-state icon-check-mark">
+                                                <use xlink:href="#icon-check-mark"></use>
+                                            </svg>-->
+                                            <i class="fa fa-check icon-state icon-check-mark"></i>
+                                            <i class="fa fa-pencil icon-state icon-down-arrow" style="transform: translateY(5px);" aria-hidden="true"></i>
+                                        </div>
+                                        <span class="progress-text"></span>
+                                    </center>
+                                </li>
+
+                                <li id="progress-meetup" class="progress-todo">
+                                    <center>
+                                        <div class="icon-wrap">
+                                            <i class="fa fa-check icon-state icon-check-mark"></i>
+                                            <i class="fa fa-meetup icon-state icon-down-arrow" aria-hidden="true"></i>
+                                        </div>
+                                        <span class="progress-text"></span>
+                                    </center>
+                                </li>
+                            </ol>
+                        </div>
                         <form method="post" id="register" style="" class="row">
-                            <div class="input-field col s12">
+                        <div class="row" style="margin-bottom: 0px !important;">
+                        <br>
+                            <span style="font-weight: 300;font-size: 10pt;text-align: left;padding: 0 .75rem;margin: 5px 0;" class="left">I am :</span>
+                                <p class="col s12 m6">
+                                    <input data-error=".int_ext_error" class="with-gap" name="internal_external" value="internal" type="radio" id="internal"  />
+                                    <label class="left" for="internal">VIT Vellore Student</label>
+                                </p>
+                                <p class="col s12 m6">
+                                    <input class="with-gap" name="internal_external" value="external" type="radio" id="external"  />
+                                    <label class="left" for="external">External</label>
+                                </p>
+                                <div class="col s12 int_ext_error" style="margin-top: 10px">
+                                </div>
+                        </div>
+                            <div class="input-field col s12 m6">
                                 <input required name="name" id="name" type="text">
-                                <label for="name">Name</label>
+                                <label for="name" id="name-label">Name</label>
                             </div>
-                            <div class="input-field col s12">
+                            <div class="input-field col s12 m6">
                                 <input required name="regno" id="reg" type="text">
-                                <label for="reg">Registration Number</label>
+                                <label for="reg">College Registration Number</label>
                             </div>
-                            <div class="input-field col s12">
-                                <input required name="phone" id="phone" type="text">
+                            <div class="input-field col s12 m6">
+                                <input required name="phone" id="phone" type="tel">
                                 <label for="phone">Phone Number</label>
                             </div>
-                            <div class="input-field col s12">
-                                <input required name="email" id="email" type="email" class="validate">
+                            <div class="input-field col s12 m6">
+                                <input required name="email" id="email" type="email">
                                 <label for="email">Email id</label>
+                            </div>
+                            <div id="internal_info">
+                            <div class="row">
+                            <p class="col s12 m4">
+                                    <input class="with-gap" data-error=".hosteller_error" name="hosteller" value="Day boarder" type="radio" id="dayboard"  />
+                                    <label class="left" for="dayboard">Day Boarder</label>
+                                </p>
+                                <p class="col s12 m4">
+                                    <input class="with-gap" name="hosteller" value="hosteller" type="radio" id="hostel"  />
+                                    <label class="left" for="hostel">Hosteller</label>
+                                </p>
+                                 <div class="col s12 hosteller_error" style="margin-top: 10px">
+                                </div>
+                            </div>
+                            <div class="row" id="hosteller_info">
+                             <div class="input-field col s12 m6 l6">
+                                    <select name="block" id="block">
+                                      <option value="">select an option..</option>
+                                      <optgroup label="Mens hostel">
+                                        <option value="mh_a">MH A</option>
+                                        <option value="mh_b">MH B</option>
+                                        <option value="mh_ba">MH B-annexe</option>
+                                        <option value="mh_c">MH C</option>
+                                        <option value="mh_d">MH D</option>
+                                        <option id="6" value="mh_da">MH D-annexe</option>
+                                        <option value="mh_e">MH E</option>
+                                        <option value="mh_f">MH F</option>
+                                        <option value="mh_g">MH G</option>
+                                        <option value="mh_h">MH H</option>
+                                        <option value="mh_j">MH J</option>
+                                        <option value="mh_k">MH K</option>
+                                        <option value="mh_l">MH L</option>
+                                        <option value="mh_m">MH M</option>
+                                        <option value="mh_ma">MH M-annexe</option>
+                                        <option value="mh_n">MH N</option>
+                                        <option value="mh_p">MH P</option>
+                                        <option value="mh_other">Others..</option>
+                                      </optgroup>
+                                      <optgroup label="Ladies Hostel">
+                                        <option value="lh_a">LH A</option>
+                                        <option value="lh_b">LH B</option>
+                                        <option value="lh_c">LH C</option>
+                                        <option value="lh_d">LH D</option>
+                                        <option value="lh_e">LH E</option>
+                                        <option value="lh_ea">LH E Annexe</option>
+                                        <option value="lh_other">Others..</option>
+                                      </optgroup>
+                                    </select>
+                                    <label>Hostel Block</label>
+                                  </div>
+                                  <div class="col s12 l6 m6 input-field">
+                                    <input type="text" name="roomno" id="roomno" class="validate"/>
+                                    <label for="roomno">Room number</label>
+                                    <br>
+                                  </div>
+                            </div>
+                            </div>
+                            <div id="external_info">
+                            <div class="col s12 l12 m12 input-field">
+                                    <input type="text" name="external_college" id="external_college" class="validate"/>
+                                    <label for="external_college">College name</label>
+                            </div>
                             </div>
                             <span style="font-weight: 300;font-size: 10pt;text-align: left; text-transform: capitalize;padding: 0 .75rem;margin: 5px 0;" class="left">gender</span>
                             <div class="row">
                                 <p class="col s12 m4">
-                                    <input required class="with-gap" name="gender" value="Male" type="radio" id="male"  />
+                                    <input required class="with-gap" data-error=".gender_error" name="gender" value="Male" type="radio" id="male"  />
                                     <label class="left" for="male">Male</label>
                                 </p>
                                 <p class="col s12 m4">
-                                    <input required class="with-gap" name="gender" value="Female" type="radio" id="female"  />
+                                    <input required class="with-gap" data-error=".gender_error" name="gender" value="Female" type="radio" id="female"  />
                                     <label class="left" for="female">Female</label>
                                 </p>
+                                <div class="col s12 gender_error" style="margin-top: 10px">
+                                </div>
                             </div>
-                            <span style="font-weight: 300;font-size: 10pt;text-align: left; text-transform: capitalize;padding: 0 .75rem;margin: 5px 0;" class="left">Who are you ?</span>
+                            
                             <div class="row">
-                                <p class="col s12 m4">
-                                    <input required class="with-gap" name="hosteller" value="External" type="radio" id="external"  />
-                                    <label class="left" for="external">External</label>
-                                </p>
-                                <p class="col s12 m4">
-                                    <input required class="with-gap" name="hosteller" value="Day boarder" type="radio" id="dayboard"  />
-                                    <label class="left" for="dayboard">Day Boarder</label>
-                                </p>
-                                <p class="col s12 m4">
-                                    <input required class="with-gap" name="hosteller" value="hosteller" type="radio" id="hostel"  />
-                                    <label class="left" for="hostel">Hosteller</label>
-                                </p>
-                            </div>
-                            <div class="input-field col s12" style="margin-top: 0;" id="roomandblock">
-                                <input name="room" id="room" type="text">
-                                <label for="room">Room and block</label>
-                            </div>
                             <span style="font-weight: 300;font-size: 10pt;text-align: left; text-transform: capitalize;padding: 0 .75rem;margin: 5px 0;" class="left">Hackathon or ideathon ?</span>
-                            <div class="row">
                                 <p class="col s12 m4">
-                                    <input required class="with-gap" name="participating" value="Hackathon" type="checkbox" id="hack"  />
+                                    <input class="with-gap" data-error=".participating_error" name="participating" value="Hackathon" type="checkbox" id="hack"  />
                                     <label class="left" for="hack">Hackathon</label>
                                 </p>
                                 <p class="col s12 m4">
-                                    <input required class="with-gap" name="participating" value="Ideathon" type="checkbox" id="idea"  />
+                                    <input class="with-gap" name="participating" value="Ideathon" type="checkbox" id="idea"  />
                                     <label class="left" for="idea">Ideathon</label>
                                 </p>
+                                <div class="col s12 participating_error" style="margin-top: 10px">
+                                </div>
                             </div>
                             <button id="submitBtn" style="width: 200px;margin: 10px auto" class="button-hex blk" type="submit">
                                 <span>Submit</span>
                             </button>
+                            <h6 class="submit-error-text">Please fill all the fields</h6>
                         </form>
                     </div>
                 </div>
@@ -466,143 +574,136 @@
             </div>
         </div>
         <br>-->
+
         <!--Sponsors-->
         <div class="row sponsors container hide-on-small-only">
             <h5 class="center-align section-head">SPONSORS</h5>
-            <div class="container">
-                <div class="row">
-                    <div class="col m6 s12 l4 sponsor center ">
-                        <img class="responsive-img" src="img/balsamiq.png" >
-                    </div>
-                    <div class="col m6 s12 l4 sponsor center ">
-                        <img class="responsive-img" src="img/google-developers.svg" >
-                    </div>
-                    <div class="col offset-m3 m6 s12 l4 sponsor center ">
-                        <img class="responsive-img" src="img/gitlab.svg" >
-                    </div>
+            <!-- saurav sponsors section -->
+            <div class="row">
+                <div class="col m2 offset-m1 s6 sponsor ">
+                    <a href="http://balsamiq.com"><img class="responsive-img" src="img/balsamiq.png" ></a>
                 </div>
-                <div class="row">
-                    <div class="col m6 s12 l6 sponsor center ">
-                        <img class="responsive-img" style="width: 180px;" src="img/hackerearth.png" >
-                    </div>
-                    <div class="col m6 s12 l6 sponsor center ">
-                        <img class="responsive-img" style="margin-top: 0;width: 150px;" src="img/techgigg.png">
-                    </div>
-                    <!--<div class="col offset-m3 m6 s12 l4 sponsor center ">-->
-                        <!--<img class="responsive-img" src="img/gitlab.svg" >-->
-                    <!--</div>-->
+                <div class="col m2 s6 sponsor">
+                    <a href="http://developers.google.com"><img class="responsive-img" src="img/google-developers.svg" ></a>
                 </div>
+                <div class="col m2 s6 sponsor">
+                    <a href="http://gitlab.com"><img class="responsive-img" src="img/gitlab.svg" ></a>
+                </div>
+                <div class="col m2 s6 sponsor">
+                    <a href="http://hackerearth.com"><img class="responsive-img" style="width: 180px;padding-top: 8px;" src="img/hackerearth.png" ></a>
+                </div>
+                <div class="col m2 s6 offset-s3 sponsor">
+                    <a href="http://techgig.com"><img class="responsive-img" style="width: 150px;" src="img/techgigg.png"></a>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col m2 offset-m1 s6 sponsor">
+                    <a href="#"><img class="responsive-img" src="img/skript.svg" ></a>
+                </div>
+                <div class="col m2 s6 sponsor">
+                    <a href="http://get.tech"><img class="responsive-img" src="img/tech.png" ></a>
+                </div>
+                <div class="col m2 s6 sponsor">
+                    <a href="http://jetbrains.com"><img class="responsive-img" src="img/jetbrains.png" ></a>
+                </div>
+                <div class="col m2 s6 sponsor">
+                    <a href="http://iconscout.com"><img class="responsive-img" style="padding-top: 17px;" src="img/iconscout.png" ></a>
+                </div>
+                <div class="col m2 s6 offset-s3 sponsor">
+                    <a href="http://en.todoist.com"><img class="responsive-img" style="padding-top: 15px;" src="img/todoist.png" ></a>
+                </div>
+            </div>
+            <br>
+            <div class="">
                 <div class="row">
-                    <div class="row">
-                        <div class="col offset-s3 s6 m2 offset-m2 sponsor other-sponsors center">
-                            <img class="responsive-img" src="img/skript.svg" >
-                        </div>
-                        <div class="col offset-s3 s6 m2 offset-m1 sponsor other-sponsors center">
-                            <img class="responsive-img" src="img/tech.png" >
-                        </div>
-                        <div class="col offset-s3 s6 m2 offset-m1 sponsor other-sponsors center">
-                            <img class="responsive-img" src="img/jetbrains.png" >
-                        </div>
+                    <div class="col m2 offset-m3 sponsor">
+                        <a href="http://doselect.com"><img class="responsive-img" src="img/doselect.png" ></a>
                     </div>
-                    <div class="row">
-                        <div class="col offset-s3 s6 m2 offset-m2 sponsor other-sponsors center">
-                            <img class="responsive-img" src="img/iconscout.png" >
-                        </div>
-                        <div class="col offset-s3 s6 m2 offset-m1 sponsor other-sponsors center">
-                            <img class="responsive-img" src="img/todoist.png" >
-                        </div>
-                        <div class="col offset-s3 s6 m2 offset-m1 sponsor other-sponsors center">
-                            <img class="responsive-img" src="img/doselect.png" >
-                        </div>
+                    <div class="col m2 sponsor">
+                        <a href="http://docker.com"><img class="responsive-img" src="img/docker.png" ></a>
+                    </div>
+                    <div class="col m2 sponsor">
+                        <a href="http://npmjs.com"><img class="responsive-img" src="img/npm.png" ></a>
                     </div>
 
-                    <div class="row">
-                        <div class="col offset-s3 s6 m2 offset-m3 sponsor other-sponsors center">
-                            <img class="responsive-img" src="img/docker.png" >
-                        </div>
-                        <div class="col offset-s3 s6 m2 offset-m2 sponsor other-sponsors center">
-                            <img class="responsive-img" src="img/npm.png" >
-                        </div>
+                </div>
+            </div>
+            <!-- -->
+
+
+        </div><!--End of sponsors in med and up-->
+
+        <!--sponsor section for mobile -->
+        <div class=" sponsorformobile hide-on-med-and-up">
+            <h5 class="center-align section-head">SPONSORS</h5>
+            <div class="row">
+                <div class="col s6 center">
+                    <div class="col-content">
+                        <a href="http://balsamiq.com"><img style="width: 150px;" class="responsive-img" src="img/balsamiq.png" ></a>
+                    </div>
+                </div>
+                <div class="col s6 center">
+                    <div class="col-content">
+                        <a href="http://developers.google.com"><img style="width: 150px;" class="responsive-img" src="img/google-developers.svg" ></a>
                     </div>
                 </div>
             </div>
-        </div><!--End of sponsors-->
-        <div class="sponsorformobile container show-on-small hide-on-med-and-up">
-            <h5 class="center-align section-head">SPONSORS</h5> <br>
-            <div class="slider-class">
-                <div class="row">
-                    <div class="col s6 offset-s3">
-                        <img class="responsive-img" src="img/balsamiq.png" >
-                    </div>
+            <div class="row">
+                <div class="col s6 center">
+                    <a href="http://gitlab.com"><img style="width: 150px;" class="responsive-img" src="img/gitlab.svg" ></a>
                 </div>
-                <div class="row">
-                    <div class="col s6 offset-s3">
-                        <img class="responsive-img" src="img/google-developers.svg" >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6 offset-s3">
-                        <img class="responsive-img" src="img/gitlab.svg" >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6 offset-s3">
-                        <img class="responsive-img" src="img/skript.svg" >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6 offset-s3">
-                        <img class="responsive-img" src="img/tech.png" >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6 offset-s3">
-                        <img class="responsive-img" src="img/jetbrains.png" >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6 offset-s3">
-                        <img class="responsive-img" src="img/iconscout.png" >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6 offset-s3">
-                        <img class="responsive-img" src="img/todoist.png" >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6 offset-s3">
-                        <img class="responsive-img" src="img/doselect.png" >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6 offset-s3">
-                        <img class="responsive-img" src="img/docker.png" >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6 offset-s3">
-                        <img class="responsive-img" src="img/npm.png" >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6 offset-s3">
-                        <img class="responsive-img" src="img/hackerearth.png" >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6 offset-s3">
-                        <img class="responsive-img" style="margin-top: 0;" src="img/techgigg.png">
-                    </div>
+                <div class="col s6 center">
+                    <a href="http://hackerearth.com"><img class="responsive-img" style="width: 160px;padding-top: 12px;" src="img/hackerearth.png" ></a>
                 </div>
             </div>
+            <div class="row">
+                <div class="col s6 center">
+                    <a href="http://techgig.com"><img class="responsive-img" style="width: 150px;padding-top: 15px;" src="img/techgigg.png"></a>
+                </div>
+                <div class="col s6 center">
+                    <a href="#"><img class="responsive-img" style="width: 120px;" src="img/skript.svg" ></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6 center">
+                    <a href="http://get.tech"><img class="responsive-img" style="width: 80px;" src="img/tech.png" ></a>
+                </div>
+                <div class="col s6 center">
+                    <a href="http://jetbrains.com"><img class="responsive-img" style="width: 80px;" src="img/jetbrains.png" ></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6 center">
+                    <a href="http://iconscout.com"><img class="responsive-img" style="padding-top: 17px;width: 100px;" src="img/iconscout.png" ></a>
+                </div>
+                <div class="col s6 center">
+                    <a href="http://en.todoist.com"><img class="responsive-img" style="padding-top: 15px;width: 100px;" src="img/todoist.png" ></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6 center">
+                    <a href="http://doselect.com"><img style="width: 100px;" class="responsive-img" src="img/doselect.png" ></a>
+                </div>
+                <div class="col s6 center">
+                    <a href="http://docker.com"><img style="width: 100px;" class="responsive-img" src="img/docker.png" ></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6 center">
+                    <a href="http://npmjs.com"><img style="width: 100px;" class="responsive-img" src="img/npm.png" ></a>
+                </div>
+                <div class="col s4">
+                </div>
+            </div>
+
         </div>
 
     </div>
     <footer>
         <div class="row container" style="height: 63px;">
-            <img src="img/gdglogo.png" style="height: 100%;width:auto;float: left;" alt="">
-            <a data-scroll href="#content-wrap" style="width: 200px;height: 43px;float: right;" class="button-hex wht">
+            <img src="img/gdglogo.png" style="height: 100%;width:auto;float: left;transform: translate(-10%)" alt="">
+            <a href="#content-wrap" style="width: 200px;height: 43px;float: right;" class="button-hex wht registerRedirect">
                 <span>Register</span>
             </a>
         </div>
@@ -615,13 +716,14 @@
                     <p class="grey-text text-lighten-4">Contact: +91-9414010878</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Get in touch</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/gdgvitvellore/"><i class="fa fa-facebook" aria-hidden="true"></i>&nbsp;Facebook</a></li>
-                        <li><a class="grey-text text-lighten-3" href="https://twitter.com/gdgvit"><i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;Twitter</a></li>
-                        <li><a class="grey-text text-lighten-3" href="https://plus.google.com/+gdgvitvellore"><i class="fa fa-google-plus" aria-hidden="true"></i>&nbsp;Google +</a></li>
-                        <li><a class="grey-text text-lighten-3" href="http://gdgvitvellore.com/"><i class="fa fa-link" aria-hidden="true"></i>&nbsp;Website</a></li>
-                        <li><a class="grey-text text-lighten-3" href="https://github.com/gdgvit"><i class="fa fa-github" aria-hidden="true"></i>&nbsp;Github</a></li>
+                    <h5 class="white-text social-heading">Get in touch</h5>
+                    <ul class="social">
+                        <li><a target="_blank" class="grey-text text-lighten-3" href="http://gdgvitvellore.com/"><i class="fa fa-globe fa-2x" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" class="grey-text text-lighten-3" href="https://www.facebook.com/gdgvitvellore/"><i class="fa fa-2x fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" class="grey-text text-lighten-3" href="https://twitter.com/gdgvit"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" class="grey-text text-lighten-3" href="https://plus.google.com/+gdgvitvellore"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" class="grey-text text-lighten-3" href="https://www.instagram.com/gdgvitvellore/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" class="grey-text text-lighten-3" href="https://github.com/gdgvit"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
             </div>
