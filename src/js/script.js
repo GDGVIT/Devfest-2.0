@@ -10,7 +10,6 @@ import cardParallax from './cardParallax';
 import SmoothScroll from 'smooth-scroll';
 import form from './Form';
 import 'slick-carousel';
-import swal from 'sweetalert2/dist/sweetalert2.all.min.js';
 $(function () {
     var timelines = $('.cd-horizontal-timeline'),
         eventsMinDistance = 60;
@@ -59,13 +58,11 @@ $(function () {
             });
 
             //on swipe, show next/prev event content
-            timelineComponents['eventsContent'].on('swipeleft', function(){
-                var mq = checkMQ();
-                ( mq == 'mobile' ) && showNewContent(timelineComponents, timelineTotWidth, 'next');
+            timelineComponents['eventsWrapper'].on('swipeleft', function(){
+                showNewContent(timelineComponents, timelineTotWidth, 'next');
             });
-            timelineComponents['eventsContent'].on('swiperight', function(){
-                var mq = checkMQ();
-                ( mq == 'mobile' ) && showNewContent(timelineComponents, timelineTotWidth, 'prev');
+            timelineComponents['eventsWrapper'].on('swiperight', function(){
+                showNewContent(timelineComponents, timelineTotWidth, 'prev');
             });
 
             //keyboard navigation
@@ -271,6 +268,7 @@ $(function () {
         //check if mobile or desktop device
         return window.getComputedStyle(document.querySelector('.cd-horizontal-timeline'), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
     }
+    console.log({'is mobile device -':checkMQ()});
 });
 /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 var loadCSS;
