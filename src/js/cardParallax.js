@@ -40,4 +40,5 @@ export default  function () {
     calculateOffset();
     handleScroll();
     document.onscroll=handleScroll;
+
 }

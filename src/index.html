@@ -205,9 +205,9 @@
             </div>
 
             <div id="landBtn" style="position:fixed;left:50%;transform:translateX(-50%);display: flex;justify-content: space-around;flex-wrap: wrap;">
-                <a id="watch-button" class="button-hex wht" href="#">
+                <!--<a id="watch-button" class="button-hex wht" href="#">
                     <span>Watch Promo Video</span>
-                </a>
+                </a>-->
                 <a id="register-button" class="button-hex wht registerRedirect" href="#content-wrap">
                     <span>Register</span>
                 </a>
@@ -269,7 +269,23 @@
             <div style="padding: 50px;">
                 <div class="container" style="text-align: justify;">
                     <div class="date-section">
-                      <p style="color: black; display: inline-block;"><span class="date-block"><i class="fa fa-calendar"></i> 27-28<sup>th</sup> October</span> <span class="hide-on-med-and-down">|</span> <span class="date-block"><i class="fa fa-map-marker"></i> VIT UNIVERSITY</span></p>
+                        <!--<a class='dropdown-button btn'  data-activates='dropdown1'>Drop Me!</a>-->
+                        <p style="color: black; display: inline-block;" class="hoverable"><span class="date-block"><i
+                                class="fa fa-calendar"></i> 27-28<sup>th</sup> October</span> <span
+                                class="hide-on-med-and-down">|</span> <span class="date-block"><i
+                                class="fa fa-map-marker"></i> VIT UNIVERSITY</span>
+                        </p>
+                        <!-- Dropdown Structure -->
+                        <var class="atc_event">
+                            <var class="atc_date_start">2014-05-04 12:00:00</var>
+                            <var class="atc_date_end">2014-05-04 18:00:00</var>
+                            <var class="atc_timezone">Europe/London</var>
+                            <var class="atc_title">Star Wars Day Party</var>
+                            <var class="atc_description">May the force be with you</var>
+                            <var class="atc_location">Tatooine</var>
+                            <var class="atc_organizer">Luke Skywalker</var>
+                            <var class="atc_organizer_email">luke@starwars.com</var>
+                        </var>
                     </div>
                 </div>
                 <br/>
@@ -480,47 +496,42 @@
         <h5 id="timeline-heading">TIMELINE</h5>
         <section class="cd-horizontal-timeline" style="background-color: black;">
             <div class="timeline">
-                <div class="events-wrapper">
+                <div class="events-wrapper scroll2">
                     <div class="events">
                         <ol class="timeline-text">
-                            <li><a href="#0" data-date="01/01/2014"><span class="time-in-timeline">7 PM</span><span>Opening Speech</span> <span> and Introduction</span></a>
+                            <li><a data-date="01/01/2014"><span class="time-in-timeline">7 PM</span><span>Opening Speech</span> <span> and Introduction</span></a>
                             </li>
-                            <li><a href="#0" data-date="15/02/2014"><span class="time-in-timeline">7:30 PM</span><span>Speech By</span><span>Speaker 1</span></a>
+                            <li><a data-date="15/02/2014"><span class="time-in-timeline">7:30 PM</span><span>Speech By</span><span>Speaker 1</span></a>
                             </li>
-                            <li><a href="#0" data-date="03/04/2014"><span class="time-in-timeline">8 AM</span><span>Hackathon And</span><span>Ideathon Begins</span></a>
+                            <li><a data-date="03/04/2014"><span class="time-in-timeline">8 AM</span><span>Hackathon And</span><span>Ideathon Begins</span></a>
                             </li>
-                            <li><a href="#0" data-date="20/05/2014"><span class="time-in-timeline">9:30 AM</span><span>Dinner</span><span>Served</span></a>
+                            <li><a data-date="20/05/2014"><span class="time-in-timeline">9:30 AM</span><span>Dinner</span><span>Served</span></a>
                             </li>
-                            <li><a href="#0" data-date="19/06/2014"><span class="time-in-timeline">3 AM</span><span>Ideathon Conclusion</span><span>And Snacks Served</span></a>
+                            <li><a data-date="19/06/2014"><span class="time-in-timeline">3 AM</span><span>Ideathon Conclusion</span><span>And Snacks Served</span></a>
                             </li>
-                            <li><a href="#0" data-date="06/08/2014"><span class="time-in-timeline">4 AM</span><span>Ideathon Top 5</span><span>Teams Announced</span></a>
+                            <li><a data-date="06/08/2014"><span class="time-in-timeline">4 AM</span><span>Ideathon Top 5</span><span>Teams Announced</span></a>
                             </li>
-                            <li><a href="#0" data-date="02/10/2014"><span class="time-in-timeline">6 AM</span><span>Gates Open for</span><span>Ideathon people to</span><span>Leave if they want</span></a>
+                            <li><a data-date="02/10/2014"><span class="time-in-timeline">6 AM</span><span>Gates Open for</span><span>Ideathon people to</span><span>Leave if they want</span></a>
                             </li>
                             <li><a style="margin-left: -50px;" href="#0" data-date="28/11/2014"><span class="time-in-timeline">8 AM</span><span>Breakfast</span></a>
                             </li>
-                            <li><a href="#0" data-date="10/12/2014"><span class="time-in-timeline">12 PM</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hack Conclusion</span><span>Alert Call</span></a>
+                            <li><a data-date="10/12/2014"><span class="time-in-timeline">12 PM</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hack Conclusion</span><span>Alert Call</span></a>
                             </li>
-                            <li><a href="#0" data-date="17/02/2015"><span class="time-in-timeline">1 PM</span><span>Hack Concludes And</span><span>First Call for</span><span>Pitch Submission</span></a>
+                            <li><a data-date="17/02/2015"><span class="time-in-timeline">1 PM</span><span>Hack Concludes And</span><span>First Call for</span><span>Pitch Submission</span></a>
                             </li>
-                            <li><a href="#0" data-date="10/04/2015"><span class="time-in-timeline">2 PM</span><span>Final Call for</span><span>Pitch Submission</span></a>
+                            <li><a data-date="10/04/2015"><span class="time-in-timeline">2 PM</span><span>Final Call for</span><span>Pitch Submission</span></a>
                             </li>
-                            <li><a href="#0" data-date="27/05/2015"><span class="time-in-timeline">2 PM</span><span>Pitch Starts</span></a>
+                            <li><a data-date="27/05/2015"><span class="time-in-timeline">2 PM</span><span>Pitch Starts</span></a>
                             </li>
                             <li><a style="margin-left: 30px;" href="#0" data-date="25/06/2015"><span class="time-in-timeline">5 PM</span><span>Speaker's Session</span><span>(Speaker 2 <span>and Speaker 3)</span></span></a>
                             </li>
-                            <li><a href="#0" data-date="27/08/2015"><span class="time-in-timeline">6 PM</span><span>Results Announced</span><span>and Closing Speech</span></a>
+                            <li><a data-date="27/08/2015"><span class="time-in-timeline">6 PM</span><span>Results Announced</span><span>and Closing Speech</span></a>
                             </li>
                         </ol>
 
                         <span class="filling-line" aria-hidden="true"></span>
                     </div> <!-- .events -->
                 </div> <!-- .events-wrapper -->
-
-                <ul class="cd-timeline-navigation">
-                    <li><a href="#0" class="prev inactive">Prev</a></li>
-                    <li><a href="#0" class="next">Next</a></li>
-                </ul> <!-- .cd-timeline-navigation -->
             </div> <!-- .timeline -->
 
 
@@ -530,7 +541,7 @@
         <h5 class="center-align section-head">SPEAKERS</h5>
         <br>
         <h5 class="center-align">To Be Announced...</h5><br>
-        <!--<div class="speakers-section container">
+        <div class="speakers-section container">
             <div class="row">
                 <div class="col s12 m6 l4">
                     <div class="card horizontal speaker">
@@ -573,7 +584,7 @@
                 </div>
             </div>
         </div>
-        <br>-->
+        <br>
 
         <!--Sponsors-->
         <div class="row sponsors container hide-on-small-only">

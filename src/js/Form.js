@@ -154,10 +154,21 @@ export default  function () {
     });
     function send(x){
         let $reg=$('#register');
+        console.log(x);
         let obj={};
+        obj.participating=[];
         for(let i=0;i<x.length;i++){
-            obj[x[i].name]=x[i].value;
+            if(x[i].name!=='participating')
+            {
+                obj[x[i].name]=x[i].value;
+            }
+            else{
+                obj[x[i].name].push(x[i].value);
+            }
         }
+        obj.participating=obj.participating.reduce((a,c)=>{
+            return a+'+'+c;
+        });
         console.log(obj);
         $.ajax({
             url:'http://139.59.82.201:8081',

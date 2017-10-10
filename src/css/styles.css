@@ -224,8 +224,8 @@ footer{
         width: 80% !important;
     }
 }
-.timeline-text{
-    font-size: small;
+.timeline-text span{
+    font-size: small !important;
 }
 .slick-prev:before {
     color: black !important;
@@ -329,5 +329,30 @@ ol.progress-track li.progress-todo .icon-wrap {
 }
 ol.progress-track li.progress-todo .icon-wrap .icon-check-mark,
 ol.progress-track li.progress-todo .icon-wrap .icon-down-arrow {
+    display: none;
+}
+.events{
+    transform: translateY(-15px);
+}
+.events-wrapper{
+    overflow-x: scroll !important;
+    overflow-y: hidden !important;
+    font-size: small;
+}
+.events-wrapper::-webkit-scrollbar-track
+{
+    background-color: #111113;
+}
+.events-wrapper::-webkit-scrollbar
+{
+    width: 3px;
+    background-color: #F5F5F5;
+}
+.events-wrapper::-webkit-scrollbar-thumb
+{
+    /*background-color: transparent;*/
+    background-color: rgba(255, 255, 255, 0.35);
+}
+.atc_event{
     display: none;
 }
