@@ -116,10 +116,12 @@ footer{
     padding: 10px 10px 10px 50px !important;
     flex-grow: 0 !important;
 }
-@media screen and (max-width: 600px )
+@media screen and (max-width: 991px )
 {
-    #personlogo{
-
+    .date-block{
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 }
 #hexagonimage{
@@ -195,6 +197,7 @@ footer{
     .cardWhite {
         width: 90% !important;
     }
+
 }
 @media only screen and (min-width: 993px) {
     .cardWhite {
