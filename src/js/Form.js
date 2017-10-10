@@ -108,12 +108,17 @@ export default  function () {
         let scroll = new SmoothScroll();
         let anchor = document.querySelector( '#registerContainer' );
         scroll.animateScroll( anchor );
+        $(this).find('#progress').removeClass('hide');
         $(this).removeClass('wht').addClass('cardWhite');
         $(this).find('#register').css({
             'height':'100%',
-        })
+        });
+        $("#internal").click();
     });
-
+    $('.registerRedirect').click(function (e) {
+        e.preventDefault();
+        $('#registerContainer').click();
+    });
     // hide all by default
     $("#external_info").hide();
     $("#internal_info").hide();
@@ -142,7 +147,7 @@ export default  function () {
     });
 
     //select Internal by default
-    $("#internal").click();
+    // $("#internal").click();
 
     $('form#register').click(function (e) {
         e.stopPropagation();

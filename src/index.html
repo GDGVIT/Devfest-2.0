@@ -205,7 +205,7 @@
                 <a id="watch-button" class="button-hex wht" href="#">
                     <span>Watch Promo Video</span>
                 </a>
-                <a id="register-button" class="button-hex wht" data-scroll href="#content-wrap">
+                <a id="register-button" class="button-hex wht registerRedirect" href="#content-wrap">
                     <span>Register</span>
                 </a>
             </div>
@@ -305,6 +305,42 @@
                 <div>
                     <div id="registerContainer" style="margin: 10px auto;" class="button-hex wht">
                         <span>Register</span>
+                        <div id="progress" class="hide">
+                            <ol class="progress-track">
+                                <li id="progress-form" class="progress-done progress-current">
+                                    <center>
+                                        <div class="icon-wrap">
+                                            <!--<svg class="icon-state icon-check-mark">
+                                                <use xlink:href="#icon-check-mark"></use>
+                                            </svg>-->
+                                            <i class="fa fa-check icon-state icon-check-mark"></i>
+                                            <i class="fa fa-pencil-square-o icon-state icon-down-arrow" style="transform: scale(0.8)translateY(5px);" aria-hidden="true"></i>
+                                        </div>
+                                        <span class="progress-text"></span>
+                                    </center>
+                                </li>
+
+                                <li id="progress-meetup" class="progress-todo">
+                                    <center>
+                                        <div class="icon-wrap">
+                                            <i class="fa fa-check icon-state icon-check-mark"></i>
+                                            <i class="fa fa-meetup icon-state icon-down-arrow" aria-hidden="true"></i>
+                                        </div>
+                                        <span class="progress-text"></span>
+                                    </center>
+                                </li>
+
+                                <li id="progress-done" class="progress-todo">
+                                    <center>
+                                        <div class="icon-wrap">
+                                            <i class="fa fa-check icon-state icon-check-mark"></i>
+                                            <i class="fa fa-check icon-state icon-down-arrow"></i>
+                                        </div>
+                                        <span class="progress-text"></span>
+                                    </center>
+                                </li>
+                            </ol>
+                        </div>
                         <form method="post" id="register" style="" class="row">
                         <div class="row" style="margin-bottom: 0px !important;">
                         <br>
@@ -681,7 +717,7 @@
     <footer>
         <div class="row container" style="height: 63px;">
             <img src="img/gdglogo.png" style="height: 100%;width:auto;float: left;" alt="">
-            <a data-scroll href="#content-wrap" style="width: 200px;height: 43px;float: right;" class="button-hex wht">
+            <a href="#content-wrap" style="width: 200px;height: 43px;float: right;" class="button-hex wht registerRedirect">
                 <span>Register</span>
             </a>
         </div>
