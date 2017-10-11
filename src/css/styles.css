@@ -81,7 +81,7 @@ div.small-img {
     font-weight: bolder;
 }
 .timeline-wrapper{
-    background-color: #2196F3;
+    background-color: #346df1;
     padding-bottom: 30px;
 }
 .timeline-wrapper #timeline-heading{
@@ -96,7 +96,7 @@ div.small-img {
     padding-top: 40px;
 }
 footer{
-    background-color: #2196F3;
+    background-color: #346df1;
     padding: 12px 0px 3px;
 }
 @media screen and (max-width: 991px )
