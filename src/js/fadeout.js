@@ -3,8 +3,8 @@ import $ from 'jquery';
 export default function fadeParallax() {
     //dom queries here save queries in a variable flag also here -boolean
     // one more flag to check to if elemets re hidden or not.,'.classifiedWrap','.mobHide'
-    var right = $('#register-button,.classifiedWrap,#coordTrack');
-    var left = $('#watch-button, .trackWrap ,#gdgTopLogo');
+    var right = $('#register-button,.rightFade,.classifiedWrap,#coordTrack');
+    var left = $('#watch-button, .leftFade ,#gdgTopLogo');
     var hide = $('.mobHide img,#glitch-left img,#mouse-button');
     var doc = $(document);
     $(function () {

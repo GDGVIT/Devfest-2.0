@@ -10,7 +10,7 @@
     <link rel="manifest" href="./manifest.json">
     <style>
         html{
-            background-color: #52bdfe;
+            background-color: #346df1;
         }
         body{
             font-family: sans-serif;
@@ -127,30 +127,9 @@
                 width: 49%;
             }
         }
-        .bars{
-            display: flex;
-            flex-direction: row-reverse;
-        }
-        .bar{
-            width: 3px;
-            height: 15px;
-            background-color: #8a8a8a;
-            margin:0 2px;
-        }
-        .trackBar{
-            flex-grow: 1;
-            background-color: #4e88ff;
-        }
-        .track{
-            align-items: stretch;
-            display: flex;
-            height: 15px;
-            width: 3px;
-            transition: width 0.5s;
-            transition-timing-function: ease-out;
-        }
-        .bytes{
-            margin: 0 5px;
+        .devfest-logo{
+            top: 50%;
+            transform: translateY(-50%);
         }
         .button-hex{
             min-width: 200px;
@@ -198,13 +177,9 @@
 </head>
 <body>
 <div class="landing-wrapper" style="height: 100vh;position: relative;overflow: hidden;">
-    <img id="gdgTopLogo" class="gdgLogo" src="img/gdglogo.png" style="height: auto; position: fixed;" alt="">
+    <!--<img id="gdgTopLogo" class="gdgLogo" src="img/gdglogo.png" style="height: auto; position: fixed;" alt="">-->
     <div class="logo-wrap">
         <div class="logo-wrap" style="position: relative;height: 100vh;">
-            <div class="example-three">
-                <img src="img/Devfest1.png" style="width: 100%;height: auto;">
-            </div>
-
             <div id="landBtn" style="position:fixed;left:50%;transform:translateX(-50%);display: flex;justify-content: space-around;flex-wrap: wrap;">
                 <!--<a id="watch-button" class="button-hex hoverable wht" href="#">
                     <span>Watch Promo Video</span>
@@ -213,18 +188,26 @@
                     <span>Register</span>
                 </a>
             </div>
-            <!--<div class="classifiedWrap" style="position:absolute;top: 50%;width: 150px;border-width:2px 0 0 2px;border-style: solid;border-color: white;">
-                <div class="classified" style="width: 100%;background-color: white;padding: 20px 0;transform: translate(30%,-70%);">
-                    <span style="width: 100%;text-align: center;display: block;">CLASSIFIED</span>
-                </div>
-            </div>-->
+        </div>
+    </div>
+    <div>
+        <div class="background-img leftFade" style="position: fixed;bottom: 0;left: 15px;width: 28%;">
+            <div>
+                <img src="img/confetti.png" class="responsive-img" style="width: 100%;transform: translateY(50%);">
+                <img src="img/buildings.png" class="responsive-img" style="width: 100%;">
+            </div>
+        </div>
+        <div class="background-img rightFade" style="position: fixed;bottom: 0;right: 15px;width: 28%;">
+            <div>
+                <img src="img/back2.png" class="responsive-img" style="width: 100%;">
+            </div>
         </div>
     </div>
     <div class="loadWrap">
         <h5 class="center-align">Loading ...</h5>
     </div>
 </div>
-<img id="devfest-logo-top" src="img/Devfest1.png" class="devfest-fixed" style="position:fixed;left: 50%;top: 50%;visibility: hidden;transform: translate(-50%,-50%);z-index: 10;">
+<img id="devfest-logo-top" src="img/Devfest1.png" class="devfest-fixed" style="position:fixed;left: 50%;top: 50%;visibility:visible;transform: translate(-50%,-50%);z-index: 10;">
 <div id="content-wrap" class="content-wrapper" style="display: none;">
     <div class="row">
         <div class="col s10 offset-s1 maincard card-panel" style="padding: 0;">

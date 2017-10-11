@@ -334,7 +334,7 @@ ol.progress-track li.progress-todo .icon-wrap .icon-down-arrow {
 .atc_event{
     display: none;
 }
-.sponsors img,.sponsorformobile img{
+/*.sponsors img,.sponsorformobile img{
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -o-filter: grayscale(100%);
@@ -346,7 +346,7 @@ ol.progress-track li.progress-todo .icon-wrap .icon-down-arrow {
     -moz-filter: grayscale(0%);
     -o-filter: grayscale(0%);
     filter: grayscale(0%);
-}
+}*/
 .timeline-header h4{
     color: white;
 }
@@ -360,7 +360,7 @@ ol.progress-track li.progress-todo .icon-wrap .icon-down-arrow {
     font-size: larger;
 }
 .event-footer {
-    color: black;;
+    color: white;
 }
 .event-content{
     padding: 24px 24px 0 24px;
