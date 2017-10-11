@@ -2,13 +2,15 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-
 }
 .landing-wrapper{
     height: calc(100vh + 500px) !important;
 }
 .speakersandsponsors{
     margin-bottom: 0 !important;
+}
+.speaker{
+    width: 125px;
 }
 .section-head{
     margin: 25px auto;
@@ -35,7 +37,7 @@ body{
     transform: translateY(50px);
 }
 .maincard p{
-    color: white;
+    color: #727272;
     text-align: justify;
     font-size: 18px;
 }
@@ -48,12 +50,18 @@ div.small-img {
 }
 
 .caption {
+    color: #727272;
     display: block;
     padding-top: 5px;
 }
 .small-img img{
     width: auto;
     height: 65px;
+    -webkit-filter: invert(100%);
+    -moz-filter: invert(100%);
+    -o-filter: invert(100%);
+    -ms-filter: invert(100%);
+    filter: invert(100%);
 }
 .ideathon-text span{
     display: block;
@@ -73,7 +81,7 @@ div.small-img {
     font-weight: bolder;
 }
 .timeline-wrapper{
-    background-color: black;
+    background-color: #2196F3;
     padding-bottom: 30px;
 }
 .timeline-wrapper #timeline-heading{
@@ -83,38 +91,13 @@ div.small-img {
     letter-spacing: 1.2px;
 }
 .speakersandsponsors #speakertext{
-    color: black;
+    color: #727272;
     text-align: center;
     padding-top: 40px;
 }
 footer{
-    background-color: black;
+    background-color: #2196F3;
     padding: 12px 0px 3px;
-}
-.speaker-img{
-    width: 100px !important;
-    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 75%, 50% 100%, 0 100%, 0% 25%);
-    clip-path: polygon(50% 0%, 100% 0, 100% 75%, 50% 100%, 0 100%, 0% 25%);
-}
-.speaker{
-    position: relative;
-}
-.speaker .card-stacked{
-    border: solid black;
-    border-width: 1px 1px 1px 0;
-    position: absolute;
-    transform: translateX(-50px);
-    z-index: 5;
-    width: 100%;
-    justify-content: center !important;
-}
-.speaker .card-image{
-    z-index:10;
-}
-.speaker .card-content{
-    transform: translateX(10px);
-    padding: 10px 10px 10px 50px !important;
-    flex-grow: 0 !important;
 }
 @media screen and (max-width: 991px )
 {
@@ -127,10 +110,6 @@ footer{
 #hexagonimage{
     width: 50px;
     border-right: 1px solid black;
-}
-.z-depth-1,.card-panel, .card{
-    -webkit-box-shadow: none;
-    box-shadow: none;
 }
 .events li a{
     top:100% !important;
@@ -162,11 +141,10 @@ footer{
 #registerContainer{
     cursor: pointer;
     width: 200px;
-    transition: width .3s;
+    transition: width .3s,background-color 0.4s ease-out,box-shadow .25s !important;;
 }
 #register{
     margin: 0;
-    transition:background-color .1s .3s;
     height: 0;
     overflow: hidden;
 }
@@ -188,10 +166,10 @@ footer{
     border-bottom: 2px solid #111113 !important;
 }
 .cardWhite {
+    border: none;
     width: 100% !important;
     cursor: auto !important;
-    background-color: white;
-    color: black !important;
+    color: #727272 !important;
 }
 .social{
     display: inline-block;
@@ -228,10 +206,10 @@ footer{
     font-size: small !important;
 }
 .slick-prev:before {
-    color: black !important;
+    color: #727272 !important;
 }
 .slick-next:before {
-    color: black !important;
+    color: #727272 !important;
 }
 .slick-next {
     right: 10px !important;
@@ -313,7 +291,7 @@ ol.progress-track li.progress-done .icon-wrap {
 }
 ol.progress-track li.progress-todo {
     border-top: 7px solid #DDD;
-    color: black;
+    color: #727272;
 }
 ol.progress-track li.progress-todo .icon-wrap {
     background-color: #FFF;
@@ -355,4 +333,58 @@ ol.progress-track li.progress-todo .icon-wrap .icon-down-arrow {
 }
 .atc_event{
     display: none;
+}
+.sponsors img,.sponsorformobile img{
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-out;
+}
+.sponsors img:hover,.sponsorformobile img:hover{
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+.timeline-header h4{
+    color: white;
+}
+.time-event{
+    width: 250px;
+    padding: 0;
+    display: inline-block;
+    margin: 10px;
+}
+.time-event h6{
+    font-size: larger;
+}
+.event-footer {
+    color: black;;
+}
+.event-content{
+    padding: 24px 24px 0 24px;
+    width:100%;
+    height: 200px;
+    overflow: hidden;
+}
+.event-content p{
+    color: #727272;
+}
+.event-footer{
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px 24px 5px 24px;
+}
+.color1{
+    background-color: rgba(79, 141, 245, 1);
+}
+.color2{
+    background-color: rgba(221, 78, 66, 1);
+}
+.color3{
+    background-color: rgba(20, 159, 92, 1);
+}
+.color4{
+    background-color: rgba(255, 194, 9, 1);
 }

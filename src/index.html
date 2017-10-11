@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=0.7, maximum-scale=0.7, minimum-scale=0.7">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Devfest 17 portal</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto" rel="stylesheet">
     <link rel="manifest" href="./manifest.json">
     <style>
         html{
@@ -25,8 +25,11 @@
             margin: 0;
             padding: 0;
         }
-        a,p,b,h1,h2,h3,h4,h5,h6,span{
+        h1,h2,h3,h4,h5,h6{
             font-family: 'Roboto', sans-serif;
+        }
+        a,p,b,span{
+            font-family: 'Noto Sans', sans-serif;
         }
         body::-webkit-scrollbar-track
         {
@@ -157,11 +160,11 @@
             display: block;
             text-decoration: none;
             background-color: transparent;
-            transition: background-color 0.4s ease-out;
+            transition: background-color 0.4s ease-out,box-shadow .25s !important;
         }
         .button-hex.blk{
             border-color: black;
-            color: black;
+            color: #727272;
         }
         .button-hex.wht{
             border-color: white;
@@ -172,8 +175,9 @@
             color: black;
         }
         .button-hex.blk:hover{
-            background-color: black;
+            background-color: rgba(79, 141, 245, 1);
             color: white;
+            border-color: rgba(79, 141, 245, 1);
         }
         .button-hex span{
             color: inherit;
@@ -205,10 +209,10 @@
             </div>
 
             <div id="landBtn" style="position:fixed;left:50%;transform:translateX(-50%);display: flex;justify-content: space-around;flex-wrap: wrap;">
-                <!--<a id="watch-button" class="button-hex wht" href="#">
+                <!--<a id="watch-button" class="button-hex hoverable wht" href="#">
                     <span>Watch Promo Video</span>
                 </a>-->
-                <a id="register-button" class="button-hex wht registerRedirect" href="#content-wrap">
+                <a id="register-button" class="button-hex hoverable wht registerRedirect" href="#content-wrap">
                     <span>Register</span>
                 </a>
             </div>
@@ -260,7 +264,7 @@
 <img id="devfest-logo-top" src="img/Devfest1.png" class="devfest-fixed" style="position:fixed;left: 50%;top: 50%;visibility: hidden;transform: translate(-50%,-50%);z-index: 10;">
 <div id="content-wrap" class="content-wrapper" style="display: none;">
     <div class="row">
-        <div class="col s10 offset-s1 maincard" style="background-color: black;padding: 0;">
+        <div class="col s10 offset-s1 maincard card-panel" style="padding: 0;">
             <div class="logoParallax">
                 <div style="padding-top: 50px;">
                     <img id="devfest-fixed" src="img/Devfest1.png" alt="Devfest" class="responsive-img" style="visibility: hidden;">
@@ -270,22 +274,11 @@
                 <div class="container" style="text-align: justify;">
                     <div class="date-section">
                         <!--<a class='dropdown-button btn'  data-activates='dropdown1'>Drop Me!</a>-->
-                        <p style="color: black; display: inline-block;" class="hoverable"><span class="date-block"><i
+                        <p style="color: black; display: inline-block;" class="z-depth-3"><span class="date-block"><i
                                 class="fa fa-calendar"></i> 27-28<sup>th</sup> October</span> <span
                                 class="hide-on-med-and-down">|</span> <span class="date-block"><i
                                 class="fa fa-map-marker"></i> VIT UNIVERSITY</span>
                         </p>
-                        <!-- Dropdown Structure -->
-                        <var class="atc_event">
-                            <var class="atc_date_start">2014-05-04 12:00:00</var>
-                            <var class="atc_date_end">2014-05-04 18:00:00</var>
-                            <var class="atc_timezone">Europe/London</var>
-                            <var class="atc_title">Star Wars Day Party</var>
-                            <var class="atc_description">May the force be with you</var>
-                            <var class="atc_location">Tatooine</var>
-                            <var class="atc_organizer">Luke Skywalker</var>
-                            <var class="atc_organizer_email">luke@starwars.com</var>
-                        </var>
                     </div>
                 </div>
                 <br/>
@@ -322,7 +315,7 @@
                 </div>
                 <br>
                 <div>
-                    <div id="registerContainer" style="margin: 10px auto;" class="button-hex wht">
+                    <div id="registerContainer" style="margin: 10px auto;" class="button-hex blk hoverable">
                         <span>Register</span>
                         <div id="progress" class="hide">
                             <ol class="progress-track">
@@ -470,7 +463,7 @@
                                 <div class="col s12 participating_error" style="margin-top: 10px">
                                 </div>
                             </div>
-                            <button id="submitBtn" style="width: 200px;margin: 10px auto" class="button-hex blk" type="submit">
+                            <button id="submitBtn" style="width: 200px;margin: 10px auto" class="button-hex blk hoverable" type="submit">
                                 <span>Submit</span>
                             </button>
                             <h6 class="submit-error-text">Please fill all the fields</h6>
@@ -485,57 +478,140 @@
             <span>ARE YOU AN IDEATOR OR ENTREPRENUER?</span>
             <span>THEN OUR <span id="ideathon" style="display: inline;">IDEATHON</span> IS FOR YOU</span><br>
             <div>
-                <a style="width: 200px;margin: 10px auto" class="button-hex blk" href="#">
+                <a style="width: 200px;margin: 10px auto" class="button-hex blk hoverable" href="#">
                     <span>know more</span>
                 </a>
             </div>
         </div>
     </div>
     <div class="timeline-wrapper">
-        <!-- ///////////////////////////// -->
         <h5 id="timeline-heading">TIMELINE</h5>
-        <section class="cd-horizontal-timeline" style="background-color: black;">
-            <div class="timeline">
-                <div class="events-wrapper scroll2">
-                    <div class="events">
-                        <ol class="timeline-text">
-                            <li><a data-date="01/01/2014"><span class="time-in-timeline">7 PM</span><span>Opening Speech</span> <span> and Introduction</span></a>
-                            </li>
-                            <li><a data-date="15/02/2014"><span class="time-in-timeline">7:30 PM</span><span>Speech By</span><span>Speaker 1</span></a>
-                            </li>
-                            <li><a data-date="03/04/2014"><span class="time-in-timeline">8 AM</span><span>Hackathon And</span><span>Ideathon Begins</span></a>
-                            </li>
-                            <li><a data-date="20/05/2014"><span class="time-in-timeline">9:30 AM</span><span>Dinner</span><span>Served</span></a>
-                            </li>
-                            <li><a data-date="19/06/2014"><span class="time-in-timeline">3 AM</span><span>Ideathon Conclusion</span><span>And Snacks Served</span></a>
-                            </li>
-                            <li><a data-date="06/08/2014"><span class="time-in-timeline">4 AM</span><span>Ideathon Top 5</span><span>Teams Announced</span></a>
-                            </li>
-                            <li><a data-date="02/10/2014"><span class="time-in-timeline">6 AM</span><span>Gates Open for</span><span>Ideathon people to</span><span>Leave if they want</span></a>
-                            </li>
-                            <li><a style="margin-left: -50px;" href="#0" data-date="28/11/2014"><span class="time-in-timeline">8 AM</span><span>Breakfast</span></a>
-                            </li>
-                            <li><a data-date="10/12/2014"><span class="time-in-timeline">12 PM</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hack Conclusion</span><span>Alert Call</span></a>
-                            </li>
-                            <li><a data-date="17/02/2015"><span class="time-in-timeline">1 PM</span><span>Hack Concludes And</span><span>First Call for</span><span>Pitch Submission</span></a>
-                            </li>
-                            <li><a data-date="10/04/2015"><span class="time-in-timeline">2 PM</span><span>Final Call for</span><span>Pitch Submission</span></a>
-                            </li>
-                            <li><a data-date="27/05/2015"><span class="time-in-timeline">2 PM</span><span>Pitch Starts</span></a>
-                            </li>
-                            <li><a style="margin-left: 30px;" href="#0" data-date="25/06/2015"><span class="time-in-timeline">5 PM</span><span>Speaker's Session</span><span>(Speaker 2 <span>and Speaker 3)</span></span></a>
-                            </li>
-                            <li><a data-date="27/08/2015"><span class="time-in-timeline">6 PM</span><span>Results Announced</span><span>and Closing Speech</span></a>
-                            </li>
-                        </ol>
+        <div class="row">
+            <div class="col s10 offset-s1">
+                <div class="row timeline-header">
+                    <h4 class="center-align"><span style="font-size: smaller;">Day</span> 1</h4>
+                </div>
+                <div style="text-align:center;">
+                    <div class="card-panel time-event hoverable">
+                        <div style="display: block;">
+                            <div class="event-content">
+                                <h6>Title</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet excepturi modi quae, reiciendis vel vero? Accusamus aliquam, assumenda dolorum, et impedit libero magnam nesciunt obcaecati quam quasi quos saepe similique?</p>
+                            </div>
+                            <div class="event-footer color2">
+                                <h6><i class="fa fa-clock-o"></i> 7:00am - 8:00 pm</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-panel time-event hoverable">
+                        <div style="display: block;">
+                            <div class="event-content">
+                                <h6>Title</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet excepturi modi quae, reiciendis vel vero? Accusamus aliquam, assumenda dolorum, et impedit libero magnam nesciunt obcaecati quam quasi quos saepe similique?</p>
+                            </div>
+                            <div class="event-footer color3">
+                                <h6><i class="fa fa-clock-o"></i> 7:00am - 8:00 pm</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-panel time-event hoverable">
+                        <div style="display: block;">
+                            <div class="event-content">
+                                <h6>Title</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet excepturi modi quae, reiciendis vel vero? Accusamus aliquam, assumenda dolorum, et impedit libero magnam nesciunt obcaecati quam quasi quos saepe similique?</p>
+                            </div>
+                            <div class="event-footer color4">
+                                <h6><i class="fa fa-clock-o"></i> 7:00am - 8:00 pm</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-panel time-event hoverable">
+                        <div style="display: block;">
+                            <div class="event-content">
+                                <h6>Title</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet excepturi modi quae, reiciendis vel vero? Accusamus aliquam, assumenda dolorum, et impedit libero magnam nesciunt obcaecati quam quasi quos saepe similique?</p>
+                            </div>
+                            <div class="event-footer color2">
+                                <h6><i class="fa fa-clock-o"></i> 7:00am - 8:00 pm</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-panel time-event hoverable">
+                        <div style="display: block;">
+                            <div class="event-content">
+                                <h6>Title</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet excepturi modi quae, reiciendis vel vero? Accusamus aliquam, assumenda dolorum, et impedit libero magnam nesciunt obcaecati quam quasi quos saepe similique?</p>
+                            </div>
+                            <div class="event-footer color3">
+                                <h6><i class="fa fa-clock-o"></i> 7:00am - 8:00 pm</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-panel time-event hoverable">
+                        <div style="display: block;">
+                            <div class="event-content">
+                                <h6>Title</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet excepturi modi quae, reiciendis vel vero? Accusamus aliquam, assumenda dolorum, et impedit libero magnam nesciunt obcaecati quam quasi quos saepe similique?</p>
+                            </div>
+                            <div class="event-footer color4">
+                                <h6><i class="fa fa-clock-o"></i> 7:00am - 8:00 pm</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-panel time-event hoverable">
+                        <div style="display: block;">
+                            <div class="event-content">
+                                <h6>Title</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet excepturi modi quae, reiciendis vel vero? Accusamus aliquam, assumenda dolorum, et impedit libero magnam nesciunt obcaecati quam quasi quos saepe similique?</p>
+                            </div>
+                            <div class="event-footer color2">
+                                <h6><i class="fa fa-clock-o"></i> 7:00am - 8:00 pm</h6>
+                            </div>
+                        </div>
+                    </div>
 
-                        <span class="filling-line" aria-hidden="true"></span>
-                    </div> <!-- .events -->
-                </div> <!-- .events-wrapper -->
-            </div> <!-- .timeline -->
 
-
-        </section>
+                </div>
+                <div class="row timeline-header">
+                    <h4 class="center-align header"><span style="font-size: smaller;">Day</span> 2</h4>
+                </div>
+                <div style="text-align:center;">
+                    <div class="card-panel time-event hoverable">
+                        <div style="display: block;">
+                            <div class="event-content">
+                                <h6>Title</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet excepturi modi quae, reiciendis vel vero? Accusamus aliquam, assumenda dolorum, et impedit libero magnam nesciunt obcaecati quam quasi quos saepe similique?</p>
+                            </div>
+                            <div class="event-footer color2">
+                                <h6><i class="fa fa-clock-o"></i> 7:00am - 8:00 pm</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-panel time-event hoverable">
+                        <div style="display: block;">
+                            <div class="event-content">
+                                <h6>Title</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet excepturi modi quae, reiciendis vel vero? Accusamus aliquam, assumenda dolorum, et impedit libero magnam nesciunt obcaecati quam quasi quos saepe similique?</p>
+                            </div>
+                            <div class="event-footer color3">
+                                <h6><i class="fa fa-clock-o"></i> 7:00am - 8:00 pm</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-panel time-event hoverable">
+                        <div style="display: block;">
+                            <div class="event-content">
+                                <h6>Title</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet excepturi modi quae, reiciendis vel vero? Accusamus aliquam, assumenda dolorum, et impedit libero magnam nesciunt obcaecati quam quasi quos saepe similique?</p>
+                            </div>
+                            <div class="event-footer color4">
+                                <h6><i class="fa fa-clock-o"></i> 7:00am - 8:00 pm</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="speakersandsponsors white row" style="padding-top: 15px;">
         <h5 class="center-align section-head">SPEAKERS</h5>
@@ -543,44 +619,25 @@
         <h5 class="center-align">To Be Announced...</h5><br>
         <div class="speakers-section container">
             <div class="row">
-                <div class="col s12 m6 l4">
-                    <div class="card horizontal speaker">
-                        <div class="card-image">
-                            <img class="speaker-img responsive-img" src="img/speaker.jpg">
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content black white-text">
-                                <p>SELENA GOMEZ</p>
-                                <p>CEO FACEBOOK</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col m3 s6 center-align">
+                    <img src="img/Placeholder.jpg" alt="" class="speaker circle responsive-img">
+                    <h6>Lorem ipsum</h6>
+                    <p>dolor sit amet</p>
                 </div>
-                <div class="col s12 m6 l4">
-                    <div class="card horizontal speaker">
-                        <div class="card-image">
-                            <img class="speaker-img responsive-img" src="img/speaker.jpg">
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content black white-text">
-                                <p>SELENA GOMEZ</p>
-                                <p>CEO FACEBOOK</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col m3 s6 center-align">
+                    <img src="img/Placeholder.jpg" alt="" class="speaker circle responsive-img">
+                    <h6>Lorem ipsum</h6>
+                    <p>dolor sit amet</p>
                 </div>
-                <div class="col s12 m6 offset-m3 l4">
-                    <div class="card horizontal speaker">
-                        <div class="card-image">
-                            <img class="speaker-img responsive-img" src="img/speaker.jpg">
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content black white-text">
-                                <p>SELENA GOMEZ</p>
-                                <p>CEO FACEBOOK</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col m3 s6 center-align">
+                    <img src="img/Placeholder.jpg" alt="" class="speaker circle responsive-img">
+                    <h6>Lorem ipsum</h6>
+                    <p>dolor sit amet</p>
+                </div>
+                <div class="col m3 s6 center-align">
+                    <img src="img/Placeholder.jpg" alt="" class="speaker circle responsive-img">
+                    <h6>Lorem ipsum</h6>
+                    <p>dolor sit amet</p>
                 </div>
             </div>
         </div>
@@ -714,7 +771,7 @@
     <footer>
         <div class="row container" style="height: 63px;">
             <img src="img/gdglogo.png" style="height: 100%;width:auto;float: left;transform: translate(-10%)" alt="">
-            <a href="#content-wrap" style="width: 200px;height: 43px;float: right;" class="button-hex wht registerRedirect">
+            <a href="#content-wrap" style="width: 200px;height: 43px;float: right;" class="button-hex wht registerRedirect hoverable">
                 <span>Register</span>
             </a>
         </div>

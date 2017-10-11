@@ -109,7 +109,7 @@ export default  function () {
         let anchor = document.querySelector( '#registerContainer' );
         scroll.animateScroll( anchor );
         $(this).find('#progress').removeClass('hide');
-        $(this).removeClass('wht').addClass('cardWhite');
+        $(this).removeClass('blk hoverable').addClass('cardWhite z-depth-3');
         $(this).find('#register').css({
             'height':'100%',
         });
@@ -196,7 +196,7 @@ export default  function () {
     <i class="fa fa-meetup fa-5x" aria-hidden="true"></i>
     <h5>You have already registered !</h5><br>
     <h6 style="font-size: small;">We know you love our events, but its deja vu all over again.</h6><br>
-    <h6>Check yor RSVP in meetup.</h6>
+    <h6>Check your RSVP in meetup.</h6>
     <a target="_blank" style="width: 200px;margin: 10px auto" class="button-hex blk rsvp" href="https://www.meetup.com/GDG-VIT/events/242833405/">Check RSVP</a>
 </div>`
                     ));
