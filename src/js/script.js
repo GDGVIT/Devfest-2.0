@@ -485,4 +485,28 @@ function loadUI() {
     console.log('stylesheet loaded !');
     fadeParallax();
     form();
+    $('#swap-idea').click(function () {
+        if (!$(this).hasClass('idea'))
+        {
+            $('#ideathon-cont').html(`<p>It's in the most inane of moments, when you are dozing off to the rhythm of your teachers or rushing to submit your DA before the clock strikes twelve, that inquisitively spectacular ideas strike.</p>
+                <p>But let's not wait around for those finally infrequent moments. We bring to Ideathon, Devfest '17.</p>
+                <p>Get your fellow intellects and dreamers to tag along or carry your black book of ideas to the venue to hone your minds to think up brilliant ideas to not technical issues, but also social troubles we face.</p>
+                <p>P.S. Fret not if you are hit by a block, we have our very own GDG mentors to guide you through.</p>`);
+            $('#ideathon-qn').html('ARE YOU A GEEK OR A DEVELOPER?');
+            $('#ideathon').html('HACKATHON');
+            $(this).addClass('idea').removeClass('hack');
+        }
+        else {
+            $('#ideathon-cont').html(`<p>DevFest’17 is back to bring innovators, thinkers and entrepreneurs under one roof for its third season.
+                        This time around, the brain-wracking challenges, the entrepreneur’s dream-come-true pitches, and
+                        the workshops come with the icing of top-notch exposure to the IT industry.</p>
+                    <p>The basic premise of a Hackathon is to have technical minds peer deeply at a real world problem and
+                        create a solution to solve it. This solution needs to be ideated, designed and delivered in all of 18
+                        hours. Hackathon also features some revered professionals and MVPs from IT sharing their ideas
+                        and thoughts on cutting edge technologies. The event shall have them impart this knowledge in one-on-one sessions or workshops.</p><br/>`);
+            $('#ideathon-qn').html('ARE YOU AN IDEATOR OR ENTREPRENEUR?');
+            $('#ideathon').html('IDEATHON');
+            $(this).addClass('hack').removeClass('idea');
+        }
+    });
 }

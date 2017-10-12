@@ -352,10 +352,15 @@ ol.progress-track li.progress-todo .icon-wrap .icon-down-arrow {
     color: white;
 }
 .time-event{
-    width: 250px;
+    width: 85%;
     padding: 0;
     display: inline-block;
     margin: 10px;
+}
+@media only screen and (min-width: 601px) {
+    .time-event{
+        width: 250px;
+    }
 }
 .time-event h6{
     font-size: larger;
