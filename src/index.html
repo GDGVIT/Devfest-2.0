@@ -10,14 +10,15 @@
     <link rel="manifest" href="./manifest.json">
     <style>
         html{
-            background-color: #346df1;
+            background-color: #ffffff;
         }
         body{
             font-family: sans-serif;
             line-height: 1.5;
             font-weight: 400;
             font-size: 14px;
-            /*background: #111113 url(img/Background.png) repeat;*/
+            background: #ffffff url(img/confetti.png) repeat;
+            background-size:  300px auto ;
             overflow-y: scroll;
             overflow-x: hidden;
         }
@@ -33,12 +34,12 @@
         }
         body::-webkit-scrollbar-track
         {
-            background-color: #111113;
+            background-color: #0081cb;
         }
         body::-webkit-scrollbar
         {
             width: 10px;
-            background-color: #F5F5F5;
+            background-color: #00b0ff;
         }
         body::-webkit-scrollbar-thumb
         {
@@ -193,13 +194,12 @@
     <div>
         <div class="background-img leftFade" style="position: fixed;bottom: 0;left: 15px;width: 28%;">
             <div>
-                <img src="img/confetti.png" class="responsive-img" style="width: 100%;transform: translateY(50%);">
                 <img src="img/buildings.png" class="responsive-img" style="width: 100%;">
             </div>
         </div>
         <div class="background-img rightFade" style="position: fixed;bottom: 0;right: 15px;width: 28%;">
             <div>
-                <img src="img/back2.png" class="responsive-img" style="width: 100%;">
+                 <img src="img/buildings.png" class="responsive-img" style="width: 100%; transform: scaleX(-1);">
             </div>
         </div>
     </div>
@@ -220,7 +220,7 @@
                 <div class="container" style="text-align: justify;">
                     <div class="date-section">
                         <!--<a class='dropdown-button btn'  data-activates='dropdown1'>Drop Me!</a>-->
-                        <p style="color: black; display: inline-block;" class="z-depth-3"><span class="date-block"><i
+                        <p style="background-color: #00b0ff; color: #ffffff; display: inline-block;" class="z-depth-3"><span class="date-block"><i
                                 class="fa fa-calendar"></i> 27-28<sup>th</sup> October</span> <span
                                 class="hide-on-med-and-down">|</span> <span class="date-block"><i
                                 class="fa fa-map-marker"></i> VIT UNIVERSITY</span>
