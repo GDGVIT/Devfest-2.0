@@ -81,7 +81,7 @@ div.small-img {
     font-weight: bolder;
 }
 .timeline-wrapper{
-    background-color: #346df1;
+    background-color: #00b0ff;
     padding-bottom: 30px;
 }
 .timeline-wrapper #timeline-heading{
@@ -96,8 +96,9 @@ div.small-img {
     padding-top: 40px;
 }
 footer{
-    background-color: #346df1;
+    background-color: #00b0ff;
     padding: 12px 0px 3px;
+    padding-bottom: 60px;
 }
 @media screen and (max-width: 991px )
 {
@@ -377,14 +378,14 @@ ol.progress-track li.progress-todo .icon-wrap .icon-down-arrow {
     padding: 5px 24px 5px 24px;
 }
 .color1{
-    background-color: rgba(79, 141, 245, 1);
+    background-color: #3f51b5;;
 }
 .color2{
-    background-color: rgba(221, 78, 66, 1);
+    background-color: #2196f3;;
 }
 .color3{
-    background-color: rgba(20, 159, 92, 1);
+    background-color: #78c257;
 }
 .color4{
-    background-color: rgba(255, 194, 9, 1);
+    background-color: #ff9800;
 }
