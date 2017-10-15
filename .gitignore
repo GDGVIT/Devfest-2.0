@@ -2,3 +2,4 @@
 .publish
 node_modules
 dist
+Thumbs.db
