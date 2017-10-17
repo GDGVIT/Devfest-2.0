@@ -509,4 +509,7 @@ function loadUI() {
             $(this).addClass('hack').removeClass('idea');
         }
     });
+    $('#toggle-faq').click(function () {
+        $('.hidden-toggle').toggleClass('hide').not('#toggle-faq').addClass('animated fadeInLeft');
+    });
 }

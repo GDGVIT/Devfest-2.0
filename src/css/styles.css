@@ -63,25 +63,30 @@ div.small-img {
     -ms-filter: invert(100%);
     filter: invert(100%);
 }
-.ideathon-text span{
-    display: block;
-    font-size: large;
+.faq-div{
+    background-color: rgb(242,242,242);
+    padding: 25px;
+}
+#faq{
+    transform: translateY(50px);
+    margin: 0 auto;
+    width: 80%;
+}
+#faq.expand{
+    transition: height 7s ease-out;
+}
+#faq i{
+    font-size: 14px !important;
+}
+.faq-head{
+    color: #325dff;
 }
 .ideathon-div{
-    background-color: white;
-    /*margin: 30px 0 0 0;*/
-    padding : 80px 0 50px 0;
-}
-.ideathon-div .ideathon-text{
-    text-align: center;
-    word-spacing: 9px;
-    letter-spacing: 1.2px;
-}
-#ideathon{
-    font-weight: bolder;
+    background-color: #325dff;
+    min-height: 250px;
 }
 .timeline-wrapper{
-    background-color: #00b0ff;
+    background-color: #325dff;
     padding-bottom: 30px;
 }
 .timeline-wrapper #timeline-heading{
@@ -95,8 +100,11 @@ div.small-img {
     text-align: center;
     padding-top: 40px;
 }
+.speakersandsponsors,#faq .collapsible-body{
+    background-color: rgb(242,242,242)!important;
+}
 footer{
-    background-color: #00b0ff;
+    background-color: #325dff;
     padding: 12px 0px 3px;
     padding-bottom: 60px;
 }
@@ -204,11 +212,16 @@ footer{
     .cardWhite {
         width: 90% !important;
     }
-
+    #faq{
+        width: 70%;
+    }
 }
 @media only screen and (min-width: 993px) {
     .cardWhite {
         width: 80% !important;
+    }
+    #faq{
+        width: 60%;
     }
 }
 .timeline-text span{
