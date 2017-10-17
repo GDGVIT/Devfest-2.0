@@ -227,10 +227,10 @@
     }
 
     .download-app {
-        background-color: #919191;
-        color: white;
-        padding-top: 50px;
-        padding-bottom: 50px;
+        background-color: transparent;
+        color: #4A4A4A;
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
     }
 
     .download-app .android {
@@ -239,6 +239,7 @@
         border: none;
         border-radius: 5px;
         background-color: #7fbb00;
+        color: white;
         margin-bottom: 30px;
     }
 
@@ -248,12 +249,13 @@
         border: 2px solid #7fbb00;
     }
 
-     .download-app .apple {
+    .download-app .apple {
         width: 120px;
         height: 45px;
         border: none;
         border-radius: 5px;
         background-color: #999999;
+        color: white;
     }
 
     .download-app .apple:hover {
@@ -678,21 +680,23 @@
             <!-- </div> -->
             <!--End of sponsors in med and up -->
         </div>
-        <section class="fluid-container download-app">
+
+        <!-- Download App Section Start -->
+        <section class="section download-app">
+            <h4 class="center section-head">Download Our App</h4>
             <div class="row center-aligned">
-                <div class="col m12">
-                    <h4 class="center section-head">Download Our App</h4>
+                <div class="col m3 s12 center"></div>
+                <div class="col m3 s12 center">
+                    <a href="#"><img src="img/android.png" width="200" height="60"></a>
                 </div>
-            </div>
-            <div class="row center-aligned">
-                <div class="col m6 s12 center">
-                    <button class="android"><i class="fa fa-android fa-2x" aria-hidden="true"></i> Android</button>
+                <div class="col m3 s12 center">
+                   <a href="#"><img src="img/apple.png" width="200" height="60"></a>
                 </div>
-                <div class="col m6 s12 center">
-                <button class="apple"><i class="fa fa-apple fa-2x" aria-hidden="true"></i> iOS</button>
-                </div> 
+                <div class="col m3 s12 center"></div>
             </div>
         </section>
+       <!--  Download App Section End -->
+
         <footer>
             <div class="row container" style="height: 63px;"> <img src="img/gdglogo.png" style="height: 100%;width:auto;float: left;transform: translate(-10%)" alt=""> <a href="#content-wrap" style="width: 200px;height: 43px;float: right;" class="button-hex wht registerRedirect hoverable">
                 <span>Register</span>
