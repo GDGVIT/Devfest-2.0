@@ -509,7 +509,34 @@ function loadUI() {
             $(this).addClass('hack').removeClass('idea');
         }
     });
+    let collapseToggle=false;
     $('#toggle-faq').click(function () {
-        $('.hidden-toggle').toggleClass('hide').not('#toggle-faq').addClass('animated fadeInLeft');
+        $(this).toggleClass('less');
+        if($(this).hasClass('less'))
+        {
+            $(this).find('.center-align').html('View less');
+            collapseToggle=false;
+            $('.hidden-toggle').not('#toggle-faq').toggleClass('hide').removeClass('fadeOutUp').addClass('animated fadeInDown');
+        }
+        else {
+            $(this).find('.center-align').html('View all');
+            collapseToggle=true;
+            $('.hidden-toggle').not('#toggle-faq').removeClass('fadeInDown').addClass('fadeOutUp');
+        }
+    });
+    $('.hidden-toggle').not('#toggle-faq').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+        if(collapseToggle){
+            $(this).addClass('hide');
+        }
+    });
+    $('#faq').collapsible({
+        onOpen: function ($el) {
+            let $icon=$el.find('i');
+            $icon.addClass('fa-minus').removeClass('fa-plus');
+        },
+        onClose: function ($el) {
+            let $icon=$el.find('i');
+            $icon.addClass('fa-plus').removeClass('fa-minus');
+        }
     });
 }

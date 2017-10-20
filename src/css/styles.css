@@ -100,7 +100,10 @@ div.small-img {
     text-align: center;
     padding-top: 40px;
 }
-.speakersandsponsors,#faq .collapsible-body{
+.speakersandsponsors{
+    background-color: white;
+}
+#faq .collapsible-body{
     background-color: rgb(242,242,242)!important;
 }
 footer{
