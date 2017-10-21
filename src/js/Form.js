@@ -2,7 +2,7 @@
  * Created by Vineeth on 09-10-2017.
  */
 import SmoothScroll from 'smooth-scroll';
-import validate from 'jquery-validation';
+import 'jquery-validation';
 export default  function () {
     $.validator.addMethod(
         "regex",
@@ -211,6 +211,18 @@ export default  function () {
             }
         })
     }
+    $(function () {
+        $('#reg').blur(function () {
+            console.log('change triggered !');
+            let val=$(this).val();
+            if(val.length>=2){
+                if (val.slice(0,2)!=='17')
+                    $('#idea').prop('checked',false).prop('disabled',true).parent().tooltip({delay: 50});
+                else
+                    $('#idea').prop('disabled',false).parent().tooltip('remove');
+            }
+        });
+    });
     $('#register').submit(function (e) {
        e.preventDefault();
 
