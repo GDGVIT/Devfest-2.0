@@ -67,25 +67,39 @@ div.small-img {
     background-color: rgb(242,242,242);
     padding: 25px;
 }
-#faq{
+.faq-content{
     transform: translateY(50px);
+    margin-bottom: 0;
+}
+.idea-switch{
+    width: 80%;
+    background-color: transparent;
+    margin-bottom: 25px;
+}
+.idea-switch a{
+    color: #325dff !important;
+}
+.idea-switch .indicator{
+    background-color: #325dff;;
+}
+.faq{
     margin: 0 auto;
     width: 80%;
 }
-#faq.expand{
+.faq.expand{
     transition: height 7s ease-out;
 }
-#faq i{
+.faq i{
     font-size: 14px !important;
 }
 .faq-head{
     color: #325dff;
 }
-.ideathon-div{
-    background-color: #325dff;
-    min-height: 250px;
+#ideathon-cont p{
+    text-align: justify;
 }
 .timeline-wrapper{
+    padding-top: 50px;
     background-color: #325dff;
     padding-bottom: 30px;
 }
@@ -103,7 +117,7 @@ div.small-img {
 .speakersandsponsors{
     background-color: white;
 }
-#faq .collapsible-body{
+.faq .collapsible-body{
     background-color: rgb(242,242,242)!important;
 }
 footer{
@@ -215,7 +229,7 @@ footer{
     .cardWhite {
         width: 90% !important;
     }
-    #faq{
+    .faq,.idea-switch{
         width: 70%;
     }
 }
@@ -223,7 +237,7 @@ footer{
     .cardWhite {
         width: 80% !important;
     }
-    #faq{
+    .faq,.idea-switch{
         width: 60%;
     }
 }

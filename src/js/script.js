@@ -509,27 +509,47 @@ function loadUI() {
             $(this).addClass('hack').removeClass('idea');
         }
     });
-    let collapseToggle=false;
-    $('#toggle-faq').click(function () {
+    let collapseHackToggle=false;
+    $('#toggle-hack-faq').click(function () {
         $(this).toggleClass('less');
         if($(this).hasClass('less'))
         {
             $(this).find('.center-align').html('View less');
-            collapseToggle=false;
-            $('.hidden-toggle').not('#toggle-faq').toggleClass('hide').removeClass('fadeOutUp').addClass('animated fadeInDown');
+            collapseHackToggle=false;
+            $('#hack-faq').find('.hidden-toggle').not('#toggle-hack-faq').toggleClass('hide').removeClass('fadeOutUp').addClass('animated fadeInDown');
         }
         else {
             $(this).find('.center-align').html('View all');
-            collapseToggle=true;
-            $('.hidden-toggle').not('#toggle-faq').removeClass('fadeInDown').addClass('fadeOutUp');
+            collapseHackToggle=true;
+            $('#hack-faq').find('.hidden-toggle').not('#toggle-hack-faq').removeClass('fadeInDown').addClass('fadeOutUp');
         }
     });
-    $('.hidden-toggle').not('#toggle-faq').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-        if(collapseToggle){
+    let collapseIdeaToggle=false;
+    $('#toggle-idea-faq').click(function () {
+        $(this).toggleClass('less');
+        if($(this).hasClass('less'))
+        {
+            $(this).find('.center-align').html('View less');
+            collapseIdeaToggle=false;
+            $('#idea-faq').find('.hidden-toggle').not('#toggle-idea-faq').toggleClass('hide').removeClass('fadeOutUp').addClass('animated fadeInDown');
+        }
+        else {
+            $(this).find('.center-align').html('View all');
+            collapseIdeaToggle=true;
+            $('#idea-faq').find('.hidden-toggle').not('#toggle-idea-faq').removeClass('fadeInDown').addClass('fadeOutUp');
+        }
+    });
+    $('#hack-faq').find('.hidden-toggle').not('#toggle-hack-faq').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+        if(collapseHackToggle){
             $(this).addClass('hide');
         }
     });
-    $('#faq').collapsible({
+    $('#idea-faq').find('.hidden-toggle').not('#toggle-idea-faq').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+        if(collapseIdeaToggle){
+            $(this).addClass('hide');
+        }
+    });
+    $('.faq').collapsible({
         onOpen: function ($el) {
             let $icon=$el.find('i');
             $icon.addClass('fa-minus').removeClass('fa-plus');
@@ -539,4 +559,7 @@ function loadUI() {
             $icon.addClass('fa-plus').removeClass('fa-minus');
         }
     });
+    $(function () {
+        $('#hack-link').click();
+    })
 }
