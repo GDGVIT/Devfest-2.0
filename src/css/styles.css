@@ -10,10 +10,10 @@ body{
     margin-bottom: 0 !important;
 }
 .speaker{
-    width: 125px;
+    width: 150px;
 }
 .section-head{
-    margin: 25px auto;
+    margin: 50px auto 25px auto ;
 }
 .img-div{
     padding-right: 100px;
