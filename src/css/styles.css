@@ -10,14 +10,14 @@ body{
     margin-bottom: 0 !important;
 }
 .speaker{
-    width: 150px;
+    width: 200px;
 }
 .section-head{
     margin: 50px auto 25px auto ;
 }
 .img-div{
-    padding-right: 100px;
-    padding-left: 100px;
+    padding-right: 150px;
+    padding-left: 150px;
 }
 #devfest-logo{
     max-width:100%;
