@@ -30,7 +30,7 @@
     "materialize-css": "^0.100.2",
     "slick-carousel": "^1.8.1",
     "smooth-scroll": "^12.1.5",
-    "sweetalert2": "^6.10.2",
+    "sweetalert2": "^6.11.5",
     "vinyl-source-stream": "^1.1.0"
   }
 }
